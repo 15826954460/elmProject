@@ -1,0 +1,30 @@
+.animateChildren{
+  .children-slide-enter-active{
+    animation:children-slide-in .5s linear;
+  }
+  @keyframes children-slide-in {
+    0% {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+.animateParent{
+  .parent-slide-enter-active{
+    animation:parent-slide-in .5s linear;
+  }
+  @keyframes parent-slide-in {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+}

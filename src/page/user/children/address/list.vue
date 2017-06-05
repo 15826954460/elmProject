@@ -1,0 +1,63 @@
+<template>
+  <div class="address-detail-wrapper">
+
+    <vheader message="搜索地址" back="true">
+      <router-link to="/user/add" class="fa fa-angle-left" tag="span" slot="angle"></router-link>
+    </vheader>
+
+    <div class="add-detail">
+      <input type="text" placeholder="请输入小区/写字楼/学校等" v-model="inputAdress" @input="inputThing">
+      <button @click="sureChange()">确认</button>
+    </div>
+    <div class="warnpart">为了满足商家的送餐要求，建议您从列表中选择地址</div>
+    <ul class="address-list-wrapper" v-show="!isShowWarning">
+      <li v-for="(item, index) in addDetailList" @click="listClick(item, index)">
+        <p>{{item.name}}</p>
+        <p>{{item.address}}</p>
+      </li>
+    </ul>
+    <div class="point" v-show="isShowWarning">
+      <p>找不到地址？</p>
+      <p>请尝试输入小区、写字楼或学校名</p>
+      <p>详细地址（如门牌号）可稍后输入哦。</p>
+    </div>
+  </div>
+</template>
+<script>
+  import vheader from '../../../../components/header/header.vue'
+  export default {
+    components: {
+      vheader
+    },
+    data () {
+      return {
+        isShowWarning: true,  // 控制addresslist是否显示
+        isJump: false,  // 控制是否跳转回到新增地址页
+        inputAdress: '' // 地址
+      }
+    },
+    computed: {
+      addDetailList () {  // 计算属性获取数据
+        return this.$store.getters.addDetail
+      }
+    },
+    methods: {
+      listClick (item, index) {  // 改变当前显示的详细地址
+        window.localStorage.setItem('inputAdress', item.name)
+        this.inputAdress = window.localStorage.getItem('inputAdress')
+        this.isJump = true
+      },
+      inputThing () {  // 显示地址列表数据
+        this.isShowWarning = false
+      },
+      sureChange () {
+        if (this.isJump === true) {  // 所有输入过符合要求才能跳转页面
+          this.$router.push({path: '/user/add'})
+        }
+      }
+    }
+  }
+</script>
+<style scoped>
+  @import './list.css';
+</style>

@@ -1,0 +1,270 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.shop_list_container {
+  background: #fff;
+}
+.shop_list_container .shop_header {
+  line-height: .8rem;
+  padding-left: 0.2rem;
+  font-size: .28rem;
+  color: #4D4D4D;
+}
+.shop_list_container .shop_header > img {
+  width: .4rem;
+}
+.shop_list_container .shop_list > li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.shop_list_container .shop_list > li {
+  padding: .4rem .1rem;
+  font-size: .2rem;
+  width: 100%;
+}
+.shop_list_container .shop_list > li .list_container {
+  display: flex;
+  display: -webkit-flex;
+}
+.shop_list_container .shop_list > li .list_container .list_left {
+  width: 15%;
+  float: left;
+}
+.shop_list_container .shop_list > li .list_container .list_left > img {
+  width: 100%;
+}
+.shop_list_container .shop_list > li .list_container .list_right {
+  flex: 1;
+  padding-left: 0.1rem;
+  font-size: .24rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .title {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .title > h4 {
+  display: inline-block;
+  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.shop_list_container .shop_list > li .list_container .list_right .title .onTime {
+  border: 1px solid #4D4D4D;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  float: right;
+  font-weight: normal;
+  padding: 2px 5px;
+  margin-left: 0.1rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .title .premium::before {
+  content: '品牌';
+  display: inline-block;
+  font-size: .24rem;
+  line-height: .24rem;
+  background-color: #ffd930;
+  padding: 0.04rem 0.1rem;
+  border-radius: 0.04rem;
+  margin-right: 0.1rem;
+  vertical-align: top;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum {
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  margin-bottom: 0.1rem;
+  font-size: .24rem;
+  height: .4rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .mouhtSell {
+  width: 55%;
+  font-size: 0;
+  position: relative;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .mouhtSell .level-wrapper {
+  position: absolute;
+  top: .04rem;
+  right: 0;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .mouhtSell .level-wrapper .level {
+  display: inline-block;
+  color: #FF6000;
+  font-size: .2rem;
+  margin-right: 0;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .mouhtSell .level-wrapper .monthSell {
+  font-size: .24rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .arriveTime {
+  text-align: right;
+  flex: 1;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .arriveTime > span {
+  display: inline-block;
+  font-size: .2rem;
+  padding: 1px 5px;
+  border: 1px solid #3190E8;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  margin-left: 0.02rem;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .arriveTime > span:first-child {
+  background: #3190E8;
+  color: #fff;
+}
+.shop_list_container .shop_list > li .list_container .list_right .aboutSellNum .arriveTime > span:last-child {
+  color: #3190E8;
+}
+.shop_list_container .shop_list > li .list_container .list_right .distribution {
+  display: flex;
+  display: -webkit-flex;
+}
+.shop_list_container .shop_list > li .list_container .list_right .distribution .distribution_money,
+.shop_list_container .shop_list > li .list_container .list_right .distribution .distribution_time {
+  flex: 1;
+  font-weight: bold;
+}
+.shop_list_container .shop_list > li .list_container .list_right .distribution .distribution_time {
+  text-align: right;
+}
+.shop_list_container .shop_list > li .list_container .list_right .distribution .distribution_time .useTime {
+  color: #3190E8;
+}
+.shop_list_container .noData {
+  height: .8rem;
+  line-height: .8rem;
+  color: #fff;
+  background: #3190E8;
+  text-align: center;
+  font-size: .32rem;
+}
+.fa.fa-arrow-circle-up {
+  font-size: .8rem;
+  position: fixed;
+  right: .2rem;
+  bottom: 1.6rem;
+  z-index: 100;
+  color: #3190E8;
+}
+.default {
+  display: none !important;
+}

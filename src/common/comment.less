@@ -1,0 +1,151 @@
+.inb {
+  display: inline-block;
+}
+
+.b {
+  display: block;
+}
+
+.pl(@pl:0px) {
+  padding-left: @pl;
+}
+
+.pr(@pr:0px) {
+  padding-right: @pr;
+}
+
+.pt(@pt:0px) {
+  padding-top: @pt;
+}
+
+.pb(@pb:0px) {
+  padding-bottom: @pb;
+}
+
+.ml(@ml:0px) {
+  margin-left: @ml;
+}
+
+.mr(@mr:0px) {
+  margin-right: @mr;
+}
+
+.mt(@mt:0px) {
+  margin-top: @mt;
+}
+
+.mb(@mb:0px) {
+  margin-bottom: @mb;
+}
+
+.trsx(@trsx:-50%) {
+  transform: translateX(@trsx);
+}
+
+.trsy(@trsy:-50%) {
+  transform: translateY(@trsy);
+}
+
+.trsl(@trsl:-50%) {
+  transform: translate(@trsl, @trsl);
+}
+.pc{
+  top:50%;
+  left:50%;
+  .trsl;
+}
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.b-r(@br:0px) {
+  border-radius: @br;
+  -webkit-border-radius: @br;
+  -moz-border-radius: @br;
+}
+
+.fix {
+  position: fixed;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+.fw {
+  font-weight: bold;
+}
+
+.cur {
+  cursor: pointer;
+}
+
+.bd(@defultColor:#000) {
+  border: 1px solid @defultColor
+}
+
+.td {
+  text-decoration:underline;
+}
+
+.flex{
+  display:flex;
+  display:-webkit-flex;
+}
+.at{
+  -webkit-align-items: center;
+  align-items: center;
+}
+.transformRX(@default:0deg){
+  -o-transform:rotateY(@default);
+  -moz-transform:rotateY(@default);
+  -webkit-transform:rotateY(@default);
+  -ms-transform:rotateY(@default);
+  transform:rotateY(@default);
+}
+
+.transformRY(@default:0deg){
+  -o-transform:rotateY(@default);
+  -moz-transform:rotateY(@default);
+  -webkit-transform:rotateY(@default);
+  -ms-transform:rotateY(@default);
+  transform:rotateY(@default);
+}
+.ellipsis {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.clamp{
+  display:-webkit-box;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:break-all;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2
+}
+.vc{
+  position:absolute;
+  top:50%;
+  .trsy();
+}
+.ic{
+  position:absolute;
+  left:50%;
+  .trsx();
+}
+.br{
+  border:1px solid red;
+}
+@default:#fff;
+@black:#000;
+@ddd:#ddd;
+@startColor:#FF6000;

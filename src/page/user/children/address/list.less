@@ -1,0 +1,67 @@
+@import '../../../../common/reset.less';
+@import '../../../../common/comment.less';
+@import '../../../../common/headerComment.less';
+@background: #3190E8;
+@4D: #4D4D4D;
+@f7: #f7f7f7;
+.address-detail-wrapper{
+  .box;
+  min-height:100vh;
+  padding-top:.8rem;
+  background:#f2f2f2;
+  .add-detail{
+    background:@default;
+    font-size:0;
+    height:1.2rem;
+    .flex;
+    padding:.3rem .2rem;
+    >input{
+      border:1px solid @4D;
+      outline:none;
+      .b-r(5px);
+      .mr(.2rem);
+      width:80%;
+      font-size:.28rem;
+      .pl(.2rem);
+      .b-r(5px)
+    }
+    >button{
+      flex:1;
+      border:none;
+      color:@default;
+      font-size:.28rem;
+      background:@background;
+      .b-r(3px);
+      outline:none;
+    }
+  }
+  .warnpart{
+    line-height:.6rem;
+    background:#FFF6E4;
+    color:#FF883F;
+    font-size:.24rem;
+    .tc;
+  }
+  .address-list-wrapper{
+    >li{
+      padding:.2rem;
+      border-bottom:1px solid @ddd;
+      background:#F2F2F2;
+      p{
+        line-height:.4rem;
+        font-size:.28rem;
+        color:#999;
+      }
+    }
+  }
+  .point{
+    .abs;
+    top:50%;
+    left:50%;
+    .trsl();
+    width:80%;
+    font-size:.28rem;
+    .tc;
+    line-height:.6rem;
+  }
+}

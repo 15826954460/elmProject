@@ -1,0 +1,337 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.animateChildren .children-slide-enter-active {
+  animation: children-slide-in 0.5s linear;
+}
+@keyframes children-slide-in {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animateParent .parent-slide-enter-active {
+  animation: parent-slide-in 0.5s linear;
+}
+@keyframes parent-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.favorable-box {
+  width: 100%;
+}
+.favorable-box .favorable-wrapper {
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+.favorable-box .favorable-wrapper .favorable-nav {
+  display: flex;
+  display: -webkit-flex;
+  line-height: .7rem;
+  font-size: .28rem;
+}
+.favorable-box .favorable-wrapper .favorable-nav li {
+  flex: 1;
+  text-align: center;
+  background: #fff;
+}
+.favorable-box .favorable-wrapper .favorable-nav li dd span {
+  padding-bottom: 0.1rem;
+}
+.favorable-box .favorable-wrapper .favorable-nav li .active_span {
+  border-bottom: 2px solid #3190E8;
+}
+.favorable-box .content_header {
+  font-size: .28rem;
+  height: .8rem;
+  line-height: .8rem;
+  padding-left: 0.2rem;
+  position: relative;
+}
+.favorable-box .content_header .contetn_description {
+  right: .2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.favorable-box .content_header .contetn_description > img {
+  width: .2rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.04rem;
+}
+.favorable-box .content_header .contetn_description > span {
+  color: #3190E8;
+}
+.favorable-box .hongbao_list_ul {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  background: #f7f7f7;
+}
+.favorable-box .hongbao_list_ul > li {
+  background: #fff url(../../../static/img/hongbao.png) repeat-x;
+  background-size: .2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.favorable-box .hongbao_list_ul > li .list_item {
+  display: flex;
+  display: -webkit-flex;
+  padding: .3rem;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_left {
+  color: red;
+  font-size: .2rem;
+  flex: 1;
+  -webkit-align-items: center;
+  align-items: center;
+  border-right: 2px dotted #ddd;
+  padding-right: 0.1rem;
+  padding-top: 0.3rem;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_left .fuhao {
+  font-size: .36rem;
+  font-weight: bold;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_left .big_num {
+  font-size: .6rem;
+  font-weight: bold;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_left .dot {
+  font-weight: bold;
+  font-size: .4rem;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_left .sm_num {
+  font-size: .5rem;
+  font-weight: bold;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_right {
+  flex: 2;
+  font-size: .24rem;
+  margin-left: 0.2rem;
+}
+.favorable-box .hongbao_list_ul > li .list_item .list_item_right li {
+  list-style: disc;
+  list-style-position: inside;
+  line-height: 0.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.favorable-box .hongbao_list_ul .list_item_footer > ul {
+  background: #f7f7f7;
+}
+.favorable-box .hongbao_list_ul .list_item_footer > ul li {
+  list-style: disc;
+  list-style-position: inside;
+  font-size: .24rem;
+  line-height: .6rem;
+}
+.favorable-box .history_hongbao {
+  line-height: .8rem;
+  font-size: .24rem;
+  text-align: center;
+}
+.favorable-box .history_hongbao span + span {
+  margin-left: 0.2rem;
+}
+.favorable-box .hongbao_footer {
+  display: flex;
+  display: -webkit-flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: .8rem;
+  background: #fff;
+  border-top: 2px solid #ddd;
+}
+.favorable-box .hongbao_footer .hongbao_style {
+  flex: 1;
+  font-size: .28rem;
+  text-align: center;
+  color: #4D4D4D;
+}
+.favorable-box .unable_use {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .24rem;
+  text-align: center;
+  width: 100%;
+}
+.favorable-box .unable_use img {
+  width: 2.4rem;
+  height: 1.2rem;
+}
+.favorable-box .unable_use p {
+  line-height: .4rem;
+}
+.favorable-box .unable_use .download_app {
+  background: #4CD964;
+  width: 60%;
+  line-height: .5rem;
+  margin: 0 auto;
+  color: #fff;
+  border: none;
+  font-size: .28rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.favorable-box .children-slide-enter-active {
+  animation: children-slide-in 0.5s linear;
+}
+@keyframes children-slide-in {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.favorable-box .parent-slide-enter-active {
+  animation: parent-slide-in 0.5s linear;
+}
+@keyframes parent-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

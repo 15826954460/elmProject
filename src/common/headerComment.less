@@ -1,0 +1,40 @@
+@f7: #f7f7f7;
+@background: #3190E8;
+@default:#fff;
+@button: #4CD964;
+@4D: #4D4D4D;
+.box {
+    width: 100%;
+    padding-top:(.8rem);
+    background: @f7;
+  }
+.comment_alert{
+  width: 80%;
+  background: @default;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  border-radius:5px;
+  font-size: 0.24rem;
+  .download-warning {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #F8CB86;
+  }
+  .download-text {
+    text-align: center;
+    color: @4D;
+    font-size: 0.28rem;
+  }
+  .change-box {
+    width: 100%;
+    background: @button;
+    text-align: center;
+    color: @default;
+    line-height: .6rem;
+    font-size: .4rem;
+    margin-top:.4rem;
+    border-radius:0 0 5px 5px;
+  }
+}

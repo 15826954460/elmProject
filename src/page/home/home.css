@@ -1,0 +1,221 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.homeWrapper {
+  background: #F5F5F5;
+  padding-top: 0.8rem;
+}
+.city_nav {
+  background: #fff;
+}
+.city_nav .city_tip {
+  height: .8rem;
+  line-height: .8rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  font-size: .24rem;
+}
+.city_nav .city_tip > span:nth-child(2) {
+  float: right;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+.city_nav .guess_city {
+  height: .8rem;
+  line-height: .8rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border-bottom: 2px solid #ddd;
+  font-size: .36rem;
+  margin-bottom: 0.2rem;
+}
+.city_nav .guess_city > span {
+  color: #3190e8;
+}
+.city_nav .guess_city .fa-chevron-right {
+  float: right;
+  position: relative;
+  top: .2rem;
+}
+#hot_city_container {
+  background: #fff;
+}
+#hot_city_container > h4 {
+  border-top: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: .28rem;
+  font-weight: 400;
+  height: .8rem;
+  line-height: .8rem;
+  padding-left: 0.3rem;
+}
+#hot_city_container > ul {
+  overflow: hidden;
+}
+#hot_city_container > ul li {
+  float: left;
+  text-align: center;
+  height: .6rem;
+  line-height: .6rem;
+  font-size: .28rem;
+  color: #3190e8;
+  width: 25%;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+.group_city_container {
+  overflow: hidden;
+}
+.group_city_container .letter_classify > li {
+  background: #fff;
+  margin-top: 0.2rem;
+  width: 100%;
+}
+.group_city_container .letter_classify > li > .city_title {
+  border-top: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: .28rem;
+  font-weight: 400;
+  height: .8rem;
+  line-height: .8rem;
+  padding-left: 0.3rem;
+}
+.group_city_container .letter_classify > li > .groupcity_name_container {
+  overflow: hidden;
+}
+.group_city_container .letter_classify > li > .groupcity_name_container > .ellipsis {
+  float: left;
+  text-align: center;
+  height: .6rem;
+  line-height: .6rem;
+  font-size: .28rem;
+  width: 25%;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.group_city_container .letter_classify > li > .groupcity_name_container > .ellipsis:hover {
+  cursor: pointer;
+}

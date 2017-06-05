@@ -1,0 +1,173 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.menuWrapper {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background: #ddd;
+}
+.menuWrapper .menu_nav {
+  margin-bottom: 0.2rem;
+}
+.menuWrapper .menu_nav .swiper-box {
+  border-bottom: 2px solid #ddd;
+  height: 3.2rem;
+  background: #fff;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav {
+  width: 100%;
+  height: 3.2rem;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul {
+  width: 100%;
+  padding-bottom: 0.3rem;
+  padding-top: 0.2rem;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul li {
+  width: 25%;
+  float: left;
+  padding-bottom: 0.2rem;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul li dl {
+  font-size: .24rem;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul li dl .imgWrapper {
+  margin: 0 auto;
+  width: 50%;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul li dl .imgWrapper img {
+  width: 100%;
+}
+.menuWrapper .menu_nav .swiper-box .menuNav ul li dl .title {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menuWrapper .menu_nav .swiper-box #pagination {
+  bottom: -0.25rem;
+}
+.menuWrapper .menu_nav .swiper-box #pagination > span {
+  display: inline-block;
+  width: .1rem;
+  height: .1rem;
+}

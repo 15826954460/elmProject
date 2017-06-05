@@ -1,0 +1,144 @@
+@import '../../common/reset.less';
+@import '../../common/comment.less';
+@import '../../common/headerComment.less';
+@import '../../common/animate.less';
+
+@background: #3190E8;
+@4D: #4D4D4D;
+@button: #4CD964;
+@org: #FF6600;
+.vip-big-box{
+  overflow: hidden;
+  width:100%;
+  min-height:100vh;
+  background:@f7;
+  .vip-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    .box;
+    .pt(.8rem);
+    .pay-for-vip {
+      font-size: .28rem;
+      line-height: .6rem;
+      font-weight: normal;
+      .pl(.4rem);
+      .pr(.4rem);
+    }
+    > ul {
+      background: @default;
+      .pl(.4rem);
+      > li:not(:last-child) {
+        border-bottom: 1px solid @ddd;
+      }
+      >.no-mt{
+        .mt();
+        .pl();
+        .pt();
+        .pb();
+      }
+      > li {
+        width: 100%;
+        .pt(.2rem);
+        .pb(.2rem);
+      }
+      .vip_detail {
+        .flex;
+        height:1.4rem;
+        .pr(.2rem);
+        .vip_detail_left {
+          flex:1;
+          .rel;
+          .tc;
+          img {
+            .abs;
+            top:.1rem;
+            left:50%;
+            .trsx();
+            width:80%;
+          }
+        }
+        .vip_detail_right {
+          flex:9;
+          .pl(.1rem);
+          > h4, > p {
+            line-height: .3rem;
+            .ellipsis;
+            font-size: .24rem;
+          }
+        }
+      }
+    }
+    .apply_vip {
+      .mt(.2rem);
+      background: @default;
+      .pl(.4rem);
+      .header_style {
+        border-bottom: 1px solid #ddd;
+        font-size: .28rem;
+        line-height:.6rem;
+        .mb(.2rem);
+      }
+      .apply_vip_buy {
+        .flex;
+        .pb(.2rem);
+        .apply_vip_buy_left {
+          .rel;
+          height:.4rem;
+          flex: 80%;
+          line-height: .4rem;
+          span{
+            .abs;
+            font-size:.24rem;
+          }
+          span + span {
+            color: @org;
+            .fw;
+            font-size: .28rem;
+            left:3.5rem;
+          }
+        }
+        .apply_vip_buy_right {
+          flex: 20%;
+          .tc;
+          color: @org;
+          border: 1px solid @org;
+          .b-r(5px);
+          line-height:.4rem;
+          .mr(.4rem);
+          font-size:.28rem;
+        }
+      }
+    }
+  }
+  .animateChildren;
+  .animateParent
+}
+
+.about-vip {
+  .pl(.4rem);
+  .pr(.4rem);
+  font-size: .28rem;
+  color: @black;
+  .mt(.2rem);
+  background: @default;
+  line-height: .6rem;
+  .rel;
+  .about-vip-content {
+    .flex;
+    font-weight: normal;
+    > span {
+      flex: 1;
+      font-size:.24rem;
+    }
+    > span + span {
+      .tr;
+      color: #999;
+      .pr(.3rem);
+    }
+  }
+  .fa-angle-right {
+    .vc;
+    right: .4rem;
+    font-size: .4rem;
+  }
+}

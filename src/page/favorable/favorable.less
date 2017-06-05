@@ -1,0 +1,168 @@
+@import '../../common/reset.less';
+@import '../../common/comment.less';
+@import '../../common/animate.less';
+
+@background: #3190E8;
+@4D: #4D4D4D;
+@button: #4CD964;
+@f7: #f7f7f7;
+.favorable-box {
+  width: 100%;
+  .favorable-wrapper {
+    .pb(.8rem);
+    .pt(.8rem);
+    min-height: 100vh;
+    background: @f7;
+    .favorable-nav {
+      .flex;
+      line-height: .7rem;
+      font-size: .28rem;
+      li {
+        flex: 1;
+        .tc;
+        background: @default;
+        dd {
+          span {
+            .pb(.1rem);
+          }
+        }
+        .active_span {
+          border-bottom: 2px solid @background;
+        }
+      }
+    }
+  }
+  .content_header {
+    font-size: .28rem;
+    height: .8rem;
+    line-height: .8rem;
+    .pl(.2rem);
+    .rel;
+    .contetn_description {
+      .abs;
+      right: .2rem;
+      .vc;
+      > img {
+        width: .2rem;
+        vertical-align: middle;
+        .rel;
+        top: -0.04rem;
+      }
+      > span {
+        color: @background;
+      }
+    }
+  }
+  .hongbao_list_ul {
+    .pl(.2rem);
+    .pr(.2rem);
+    background: @f7;
+    > li {
+      background: @default url(../../../static/img/hongbao.png) repeat-x;
+      background-size: .2rem;
+      .b-r(5px);
+      .list_item {
+        .flex;
+        padding: .3rem;
+        .list_item_left {
+          color: red;
+          font-size: .2rem;
+          flex: 1;
+          .at;
+          border-right: 2px dotted @ddd;
+          .pr(.1rem);
+          .pt(.3rem);
+          .fuhao {
+            font-size: .36rem;
+            .fw;
+          }
+          .big_num {
+            font-size: .6rem;
+            .fw;
+          }
+          .dot {
+            .fw;
+            font-size: .4rem;
+          }
+          .sm_num {
+            font-size: .5rem;
+            .fw;
+          }
+        }
+        .list_item_right {
+          flex: 2;
+          font-size: .24rem;
+          .ml(.2rem);
+          li {
+            list-style: disc;
+            list-style-position: inside;
+            line-height: 0.3rem;
+            .ellipsis;
+          }
+        }
+      }
+    }
+    .list_item_footer {
+      > ul {
+        background: @f7;
+        li {
+          list-style: disc;
+          list-style-position: inside;
+          font-size: .24rem;
+          line-height: .6rem;
+        }
+      }
+    }
+  }
+  .history_hongbao {
+    line-height: .8rem;
+    font-size: .24rem;
+    .tc;
+    span + span {
+      .ml(.2rem);
+    }
+  }
+  .hongbao_footer {
+    .flex;
+    .fix;
+    bottom: 0;
+    width: 100%;
+    line-height: .8rem;
+    background: @default;
+    border-top:2px solid @ddd;
+    .hongbao_style {
+      flex: 1;
+      font-size: .28rem;
+      .tc;
+      color: @4D;
+    }
+  }
+  .unable_use {
+    .abs;
+    top: 50%;
+    left: 50%;
+    .trsl();
+    font-size: .24rem;
+    .tc;
+    width: 100%;
+    img {
+      width: 2.4rem;
+      height: 1.2rem;
+    }
+    p {
+      line-height: .4rem;
+    }
+    .download_app {
+      background: @button;
+      width: 60%;
+      line-height: .5rem;
+      margin: 0 auto;
+      color: @default;
+      border: none;
+      font-size: .28rem;
+      .b-r(5px);
+    }
+  }
+  .animateChildren;
+  .animateParent;
+}
