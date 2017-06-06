@@ -76,3 +76,6 @@ export const setScores = (state, scores) => {
 export const setTage = (state, tage) => {
   state.tage = tage
 }
+export const setConfirmData = (state, confirmOrderData) => {
+  state.confirmOrderData = confirmOrderData
+}

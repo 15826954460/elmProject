@@ -1,6 +1,5 @@
 <template>
   <div class="star">
-    {{countType}}
     <i v-for="n in parseInt(countType.onCount)" class="onCount"></i>
     <i v-for="n in parseInt(countType.halfCount)" class="halfCount"></i>
     <i v-for="n in parseInt(countType.offCount)" class="offCount"></i>

@@ -1,0 +1,306 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.animateChildren .children-slide-enter-active {
+  animation: children-slide-in 0.5s linear;
+}
+@keyframes children-slide-in {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animateParent .parent-slide-enter-active {
+  animation: parent-slide-in 0.5s linear;
+}
+@keyframes parent-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.confirm_box .confirm_order_wrapper {
+  padding-top: 0.8rem;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left {
+  background: #fff;
+  height: 2rem;
+  font-size: 0.24rem;
+  padding: .3rem;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .map_wrapper {
+  flex: 1;
+  position: relative;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .map_wrapper .fa-map-marker {
+  font-size: .4rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address {
+  flex: 9;
+  color: #000;
+  font-size: 0;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address header,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail {
+  line-height: .4rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address header span,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail span {
+  font-size: 0.24rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .family_name,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .family_name {
+  font-weight: bold;
+  font-size: .3rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .sex,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .sex,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .home,
+.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .home {
+  margin-right: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .address_empty_left .fa-angle-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: .2rem;
+  font-size: .8rem;
+}
+.confirm_box .confirm_order_wrapper .delivery_model {
+  background: #fff;
+  font-size: .24rem;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border-left: 3px solid #3190E8;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .delivery_model .deliver_text {
+  flex: 1;
+  margin-left: 0.6rem;
+  color: #4D4D4D;
+  font-size: .4rem;
+  font-weight: bold;
+}
+.confirm_box .confirm_order_wrapper .delivery_model .deliver_time {
+  flex: 1;
+  color: #3190E8;
+}
+.confirm_box .confirm_order_wrapper .delivery_model .deliver_time p {
+  line-height: .5rem;
+}
+.confirm_box .confirm_order_wrapper .delivery_model .deliver_time .fengniao {
+  padding: 0 5px;
+  background: #3190E8;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.confirm_box .confirm_order_wrapper .pay_way {
+  font-size: .24rem;
+  background: #fff;
+  padding: 0 .3rem;
+  margin-bottom: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .pay_way header {
+  border-bottom: 1px solid #ddd;
+  line-height: 1rem;
+  height: 1rem;
+  display: flex;
+  display: -webkit-flex;
+}
+.confirm_box .confirm_order_wrapper .pay_way header span {
+  flex: 1;
+}
+.confirm_box .confirm_order_wrapper .pay_way header .more_type {
+  flex: 1;
+  text-align: right;
+  position: relative;
+  color: #ddd;
+  padding-right: 0.3rem;
+}
+.confirm_box .confirm_order_wrapper .pay_way header .more_type .fa-angle-right {
+  font-size: .4rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.confirm_box .confirm_order_wrapper .pay_way .hongbo {
+  line-height: 1rem;
+}
+.confirm_box .confirm_order_wrapper .food_list {
+  font-size: .24rem;
+  background: #fff;
+}
+.confirm_box .confirm_order_wrapper .food_list header {
+  height: 1.2rem;
+  line-height: 1.2rem;
+}
+.confirm_box .confirm_order_wrapper .food_list header img {
+  width: .8rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .food_list .food_item_style {
+  line-height: .8rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  display: -webkit-flex;
+}
+.confirm_box .confirm_order_wrapper .food_list .food_item_style .food_name {
+  flex: 3;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 0.2rem;
+}
+.confirm_box .confirm_order_wrapper .food_list .food_item_style .num_price {
+  flex: 1;
+  display: flex;
+  display: -webkit-flex;
+}
+.confirm_box .confirm_order_wrapper .food_list .food_item_style .num_price span {
+  flex: 1;
+}
+.confirm_box .confirm_order_wrapper .food_list .food_item_style .num_price span:first-child {
+  color: #FF9900;
+  font-weight: bold;
+}

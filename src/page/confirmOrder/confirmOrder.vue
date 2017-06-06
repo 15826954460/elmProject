@@ -1,0 +1,113 @@
+<template>
+  <div class="confirm_box">
+    <div class="confirm_order_wrapper">
+      <vhead message="确认订单">
+        <span class="fa fa-angle-left" slot="angle" @click="$router.go(-1)"></span>
+        <router-link to="/user" class="fa fa-user-o" slot="fa-user-o" tag="span"></router-link>
+      </vhead>
+      <router-link to="">
+        <div class="address_empty_left">
+          <div class="map_wrapper"><span class="fa fa-map-marker"></span></div>
+          <div class="add_address" v-if="addressList === ''">请添加一个收获地址</div>
+          <div class="address_detail add_address" v-else>
+            <header>
+              <span class="family_name">{{addressList.name}}</span>
+              <span class="sex">{{addressList.sex === 1 ? '先生' : '女士'}}</span>
+              <span>{{addressList.phone}}</span>
+            </header>
+            <div class="address_detail">
+              <span class="home">{{addressList.tag}}</span>
+              <span>{{addressList.address_detail}}</span>
+            </div>
+          </div>
+          <span class="fa fa-angle-right"></span>
+        </div>
+      </router-link>
+      <section class="delivery_model container_style">
+        <p class="deliver_text">送达时间</p>
+        <div class="deliver_time" v-if="checkout">
+          <p>尽快送达 | 预计{{checkout.delivery_reach_time}}</p>
+          <p class="fengniao" v-if="checkout.cart.is_deliver_by_fengniao">蜂鸟专送</p>
+        </div>
+      </section>
+
+      <section class="pay_way container_style">
+        <header class="header_style">
+          <span>支付方式</span>
+          <div class="more_type" @click="showPayWayFun">
+            <span>在线支付</span>
+            <span class="fa fa-angle-right"></span>
+          </div>
+        </header>
+        <section class="hongbo">
+          <span>红包</span>
+          <span>暂时只在饿了么 APP 中支持</span>
+        </section>
+      </section>
+
+      <section class="food_list" v-if="checkout">
+        <header>
+          <img :src="imgBaseUrl + checkout.cart.restaurant_info.image_path">
+          <span>{{checkout.cart.restaurant_info.name}}</span>
+        </header>
+        <ul class="food_list_ul">
+          <li v-for="item in checkout.cart.groups[0]" :key="item.id" class="food_item_style">
+            <p class="food_name ellipsis">{{item.name}}</p>
+            <div class="num_price">
+              <span>x {{item.quantity}}</span>
+              <span>¥{{item.price}}</span>
+            </div>
+          </li>
+        </ul>
+        <div class="food_item_style">
+          <p class="food_name ellipsis">{{checkout.cart.extra[0].name}}</p>
+          <div class="num_price">
+            <span></span>
+            <span>¥ {{checkout.cart.extra[0].price}}</span>
+          </div>
+        </div>
+        <div class="food_item_style total_price">
+          <p class="food_name ellipsis">订单 ¥{{checkout.cart.total}}</p>
+          <div class="num_price">
+            <span>待支付 ¥{{checkout.cart.total}}</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</template>
+<script>
+  import {mapGetters} from 'vuex'
+  import vhead from '../../components/header/header.vue'
+//  import {imgBaseUrl} from '../../mixin/getPath'
+  export default {
+    data () {
+      return {
+        imgBaseUrl: 'https://fuss10.elemecdn.com'
+      }
+    },
+    components: {
+      vhead
+    },
+    computed: {
+      ...mapGetters(['checkout']),
+      addressList () {
+        let address = ''
+        if (!this.$store.getters.addressList) {
+          address = ''
+        } else {
+          address = this.$store.getters.addressList.slice(0, 1)[0]
+        }
+        return address
+      }
+    },
+    methods: {
+      showPayWayFun () {
+      }
+    }
+  }
+</script>
+<style scoped>
+  @import './confirmOrder.css';</style>

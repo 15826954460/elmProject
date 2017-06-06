@@ -47,20 +47,8 @@ const state = {
   // shopCartList: {}, // 购物车列表
   ratingList: [], // 商品评价列表
   scores: {},
-  tage: [],
-  typeList: [
-    {'type': '全部', 'number': '789'},
-    {'type': '满意', 'number': '678'},
-    {'type': '不满意', 'number': '2'},
-    {'type': '有图', 'number': '10'},
-    {'type': '味道好', 'number': '666'},
-    {'type': '送货快', 'number': '568'},
-    {'type': '分量足', 'number': '25'},
-    {'type': '包装精美', 'number': '45'},
-    {'type': '干净卫生', 'number': '564'},
-    {'type': '食材新鲜', 'number': '582'},
-    {'type': '服务好', 'number': '684'}
-  ] // 评价信息分类
+  tage: [], // 评价信息分类
+  confirmOrderData: []
 }
 
 export default new Vuex.Store({

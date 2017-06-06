@@ -26,4 +26,6 @@ export const foodsList = state => state.foodsList
 export const ratingList = state => state.ratingList
 export const scores = state => state.scores
 export const tage = state => state.tage
-export const typeList = state => state.typeList
+export const addAddress = state => state.confirmOrderData.addAddress
+export const addressList = state => state.confirmOrderData.addressList
+export const checkout = state => state.confirmOrderData.checkout

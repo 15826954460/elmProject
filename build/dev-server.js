@@ -47,6 +47,7 @@ var shopMenu = shopDetails_Data.shopMenu
 var ratingList = shopDetails_Data.ratingList
 var scores = shopDetails_Data.scores
 var tage = shopDetails_Data.tage
+var confirm_data = require('../data/confirmOrder/confirmOrder.json')
 
 var apiRoutes = express.Router();
 
@@ -144,6 +145,12 @@ apiRoutes.get('/tage', function (req, res) {
   res.json({
     errno:0,
     tage: tage
+  })
+})
+apiRoutes.get('/confirm_data', function (req, res) {
+  res.json({
+    errno:0,
+    confirm_data: confirm_data
   })
 })
 // 注册定义api

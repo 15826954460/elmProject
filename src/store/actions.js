@@ -82,3 +82,8 @@ export const tage = ({commit}) => {
     commit('setTage', res.data.tage)
   })
 }
+export const confirmData = ({commit}) => {
+  axios.get('/api/confirm_data').then((res) => {
+    commit('setConfirmData', res.data.confirm_data)
+  })
+}

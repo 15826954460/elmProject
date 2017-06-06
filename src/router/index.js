@@ -34,6 +34,7 @@ import balancedetail from '@/page/balance/children/detail'
 import shop from '@/page/shop/shop'
 import shopdetail from '@/page/shop/shopDetail/shopDetail'
 import shopSafe from '@/page/shop/shopDetail/shopSafe/shopSafe'
+import confirmOrder from '@/page/confirmOrder/confirmOrder'
 
 Vue.use(Router)
 
@@ -211,6 +212,11 @@ export default new Router({
           ]
         }
       ]
+    },
+    // 确认订单页
+    {
+      path: '/confirmOrder',
+      component: confirmOrder
     }
   ]
 })

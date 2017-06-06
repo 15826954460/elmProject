@@ -26,6 +26,7 @@
         this.$store.dispatch('ratingList')
         this.$store.dispatch('scores')
         this.$store.dispatch('tage')
+        this.$store.dispatch('confirmData')
       })
     }
   }

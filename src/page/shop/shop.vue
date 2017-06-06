@@ -172,28 +172,28 @@
 
             <section class="appraise_info">
               <div class="appraise_info_left">
-                <span class="appraise_comprehensive">3.9</span>
+                <span class="appraise_comprehensive">{{shopDetail.rating}}</span>
                 <p>综合评价</p>
-                <span class="height_other">高于周边商家76.9%</span>
+                <span class="height_other">高于周边商家{{(scores.compare_rating*100)}}%</span>
               </div>
 
               <div class="appraise_info_right">
                 <ul>
                   <li><span>服务态度</span>
-                    <vstar :rating="4.7"></vstar>
-                    <span>4.7</span></li>
+                    <vstar :rating='scores.service_score'></vstar>
+                    <span>{{scores.service_score}}</span></li>
                   <li><span>菜品评价</span>
-                    <vstar :rating="4.8"></vstar>
-                    <span>4.8</span></li>
-                  <li><span>送达时间</span><span>分钟</span></li>
+                    <vstar :rating='scores.food_score'></vstar>
+                    <span>{{scores.food_score}}</span></li>
+                  <li><span>送达时间</span>{{scores.deliver_time}}<span>分钟</span></li>
                 </ul>
               </div>
             </section>
 
             <section class="type">
-              <p v-for="(item, index) in typeList"
+              <p v-for="(item, index) in tage"
                  :class="{active_current:activeIndex === index}" @click="choose(index)">
-                <span>{{item.type}}</span><span>({{item.number}})</span></p>
+                <span>{{item.name}}</span><span>({{item.count}})</span></p>
             </section>
 
             <section class="appraise_detail">
@@ -208,17 +208,6 @@
                     <p>
                       <vstar :rating="item.rating_star"></vstar>
                       {{item.time_spent_desc}}
-
-
-
-
-
-
-
-
-
-
-
                     </p>
                     <div class="img_wrapper">
                       <img v-for="ratings in item.item_ratings" :src="getImgPath(ratings.image_hash)" alt=""
@@ -257,10 +246,7 @@
 
           <section class="gotopay">
             <span class="" v-if="totlePrice<20">还差¥20起送</span>
-            <router-link to="" class="gotopay_button_style" v-else tag="span">去结算
-
-
-
+            <router-link to="/confirmOrder" class="gotopay_button_style" v-else tag="span">去结算
             </router-link>
           </section>
 
@@ -309,12 +295,14 @@
         singleShopListNum: {}, // 单个商品列表总数两的集合
         shopCartList: {},
         prompt: false, // 提示信息的删除弹框
-        isAddNum: false
+        isAddNum: false,
+        timer: null,
+        stepLength: 10  // 落下图标的步长
       }
     },
     computed: {
       ...mapGetters([
-        'typeList', 'ratingList', 'foodsList'
+        'tage', 'ratingList', 'foodsList', 'scores'
       ]),
       promotionInfo () { // 自定义提示信息
         return this.$store.getters.shopDetails.promotion_info || '欢迎光临，用餐高峰期请提前下单，谢谢。'
@@ -441,9 +429,9 @@
             color: span.css('color'),
             fontSize: span.css('font-size')
           })
-          $('.shop-box>.fa-plus-square').animate({ // jquery动画化栈
-            left: offsetCart.left + 40 + 'px',
-            top: offsetSpan.top + 40 + 'px',
+          $('.shop-box>.fa-plus-square').animate({ // jquery动画化栈,模拟飞入购物车效果
+            left: offsetCart.left + 60 + 'px',
+            top: offsetSpan.top + 20 + 'px',
             opacity: 0.5
           }, {duration: 250}).animate({
             left: offsetCart.left + 'px',
