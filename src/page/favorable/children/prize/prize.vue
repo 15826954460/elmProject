@@ -11,15 +11,15 @@
     </section>
     <section class="invite_firend">
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/weixin.png" @click="fenxiang">
+        <img src="../../../../../static/img/weixin.png">
         <p>邀请微信好友</p>
       </div>
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/qq.png" @click="fenxiang">
+        <img src="../../../../../static/img/qq.png">
         <p>邀请QQ好友</p>
       </div>
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/fenxiang.png" @click="fenxiang">
+        <img src="../../../../../static/img/fenxiang.png">
         <p>面对面邀请</p>
       </div>
     </section>
