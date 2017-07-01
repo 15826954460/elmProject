@@ -166,8 +166,10 @@ img {
   background: #fff;
 }
 .address-wrapper .address-list li:first-child {
-  background: #FAF7D8;
   border-top: 1px solid #ddd;
+}
+.address-wrapper .address-list .active {
+  background: #FAF7D8;
 }
 .address-wrapper .address-list li {
   padding: .2rem .3rem;

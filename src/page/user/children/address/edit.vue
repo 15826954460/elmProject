@@ -1,13 +1,13 @@
 <template>
   <div class="address-wrapper">
 
-    <vheader message="编辑地址" back="true">
+    <vheader message="编辑地址">
       <router-link to="/user/info" class="fa fa-angle-left" tag="span" slot="angle"></router-link>
       <span class="edit" @click="isShowRemove = !isShowRemove" slot="edit">编辑</span>
     </vheader>
 
     <ul class="address-list">
-      <li v-for="(item, index) in addressList">
+      <li v-for="(item, index) in addressList" :class="{active: index === negativeLight}" @click="changeNegative(index)">
         <dl>
           <dd>{{item.address}}</dd>
           <dd>{{item.phone}}</dd>
@@ -23,14 +23,15 @@
 <script>
   import vheader from '../../../../components/header/header.vue'
   export default {
-    components: {
-      vheader
-    },
     data () {
       return {
         isShowRemove: false, // 删除标记
-        addressList: []  // 地址列表
+        addressList: [],  // 地址列表
+        negativeLight: 0 //  默认选中第一个
       }
+    },
+    components: {
+      vheader
     },
     computed: {
       address () {
@@ -61,6 +62,9 @@
         window.localStorage.setItem('inputPhone', '')
         window.localStorage.setItem('addDetail', '')
         this.$router.push({path: '/user/add'})
+      },
+      changeNegative (index) {
+        this.negativeLight = index
       }
     },
     created () {  // 特面刷新加载本地数据

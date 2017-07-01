@@ -1,0 +1,27 @@
+@import '../../common/reset.less';
+@import '../../common/comment.less';
+@f7: #f7f7f7;
+.login_wrapper{
+  min-height:100vh;
+  background:@f7;
+  font-size:0;
+  .pt(1.2rem);
+  .login_box{
+    >div{
+      padding:0.2rem 0.4rem;
+      background:@default;
+      font-size:0;
+      line-height:1rem;
+      .flex;
+      input{
+        font-size:14px;
+        border:none;
+        outline: none;
+      }
+    }
+    .user_pwd_input{
+      border-top:1px solid @ddd;
+      border-bottom:1px solid @ddd;
+    }
+  }
+}

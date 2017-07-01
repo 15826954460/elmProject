@@ -172,7 +172,7 @@ img {
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address {
   flex: 9;
   color: #000;
-  font-size: 0;
+  font-size: .24rem;
 }
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address header,
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail {

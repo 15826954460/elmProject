@@ -7,6 +7,7 @@
     <slot name="change_city"></slot>
     <slot name="fa-search"></slot>
     <slot name="edit"></slot>
+    <slot name="login"></slot>
   </header>
 </template>
 <script>

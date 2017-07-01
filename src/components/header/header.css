@@ -179,3 +179,12 @@ img {
   right: .3rem;
   font-weight: normal;
 }
+.comment_header .login {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: .3rem;
+}
+.comment_header .login:hover {
+  cursor: pointer;
+}

@@ -3,17 +3,17 @@
     <div class="confirm_order_wrapper" v-show="!cnofirmShowChildren">
       <vhead message="确认订单">
         <span class="fa fa-angle-left" slot="angle" @click="$router.go(-1)"></span>
-        <router-link to="/user" class="fa fa-user-o" slot="fa-user-o" tag="span"></router-link>
+        <router-link to="/login" slot="login" tag="span" class="login">登陆/注册</router-link>
       </vhead>
       <router-link to="">
         <div class="address_empty_left">
           <div class="map_wrapper"><span class="fa fa-map-marker"></span></div>
-          <div class="add_address" v-if="addressList === ''">请添加一个收获地址</div>
-          <div class="address_detail add_address" v-else>
+          <div class="add_address" v-if="showAddressDetail">请添加一个收获地址</div>
+          <div class="address_detail add_address" v-if="!showAddressDetail">
             <header>
-              <span class="family_name">{{addressList.name}}</span>
-              <span class="sex">{{addressList.sex === 1 ? '先生' : '女士'}}</span>
-              <span>{{addressList.phone}}</span>
+              <span class="family_name">{{addressList.name}}1</span>
+              <span class="sex">{{addressList.sex}}1</span>
+              <span>{{addressList.phone}}1</span>
             </header>
             <div class="address_detail">
               <span class="home">{{addressList.tag}}</span>
@@ -101,31 +101,36 @@
   export default {
     data () {
       return {
-        imgBaseUrl: 'https://fuss10.elemecdn.com'
+        imgBaseUrl: 'https://fuss10.elemecdn.com',
+        addressList: {}, // 收获地址
+        showAddressDetail: true
       }
     },
     components: {
       vhead
     },
     mounted () {
-      console.log(this.$store.getters.addressList)
       if (window.sessionStorage.getItem('cnofirmShowChildren') === null || window.sessionStorage.getItem('cnofirmShowChildren') === 'false') {
         this.$store.commit('setCnofirmShowChildren', false)
       } else {
         this.$store.commit('setCnofirmShowChildren', true)
       }
+      if (window.sessionStorage.getItem('addressList') === null) {
+        this.showAddressDetail = true
+      } else {
+        this.showAddressDetail = false
+        this.addressList = JSON.parse(window.sessionStorage.getItem('addressList'))
+      }
     },
     computed: {
-      ...mapGetters(['checkout', 'cnofirmShowChildren']),
-      addressList () {
-        let address = ''
-        if (!this.$store.getters.addressList) {
-          address = ''
-        } else {
-          address = this.$store.getters.addressList.slice(0, 1)[0]
-        }
-        return address
-      }
+      ...mapGetters(['checkout', 'cnofirmShowChildren'])
+//      addressList () {
+//        if (window.sessionStorage.getItem('addressList') === null) {
+//          return ''
+//        } else {
+//          return JSON.parse(window.sessionStorage.getItem('addressList'))
+//        }
+//      }
     },
     methods: {
       showPayWayFun () {

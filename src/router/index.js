@@ -37,6 +37,7 @@ import shopSafe from '@/page/shop/shopDetail/shopSafe/shopSafe'
 import confirmOrder from '@/page/confirmOrder/confirmOrder'
 import orderNote from '@/page/confirmOrder/orderNote/orderNote'
 import invoice from '@/page/confirmOrder/invoice/invoice'
+import login from '@/page/login/login'
 
 Vue.use(Router)
 
@@ -229,6 +230,11 @@ export default new Router({
           component: invoice
         }
       ]
+    },
+    // 登陆页面
+    {
+      path: '/login',
+      component: login
     }
   ]
 })
