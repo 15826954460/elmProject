@@ -1,11 +1,11 @@
 <template>
   <div class='shop_list_container' id="shopList">
     <p class='shop_header'>
-      <img src="../../../static/icon/business.png" alt="">
+      <img :src="business">
       <span class='shop_header_title'>附近商家</span>
     </p>
     <ul class="shop_list">
-      <router-link :to="{path: '/shop'}"  v-for="(lists, shopListIndex) in shopListNum" tag="li" :key="lists.id">
+      <router-link :to="{path: '/shop'}" v-for="(lists, shopListIndex) in shopListNum" tag="li" :key="lists.id">
         <div class="list_container">
           <div class="list_left">
             <img :src="getImgPath(lists.image_path)" alt="">
@@ -53,6 +53,7 @@
   export default {
     data () {
       return {
+        business: require('../../../static/icon/business.png'),
         shopLists: [],
         hasData: false
       }

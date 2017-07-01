@@ -4,7 +4,7 @@
       <span class="fa fa-angle-left" @click="goToVip" slot="angle"></span>
     </vheader>
     <div class="no-shopping">
-      <img src="../../../../../static/img/no-log.png" alt="">
+      <img :src="no_log_img" alt="">
       <p>您暂时还没有购买记录</p>
     </div>
   </div>
@@ -16,7 +16,9 @@
       vheader
     },
     data () {
-      return {}
+      return {
+        no_log_img: require('../../../../../static/img/no-log.png')
+      }
     },
     methods: {
       goToVip () {

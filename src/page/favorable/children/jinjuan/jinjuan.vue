@@ -23,11 +23,11 @@
 <script>
   import vheader from '../../../../components/header/header.vue'
   export default {
-    components: {
-      vheader
-    },
     data () {
       return {}
+    },
+    components: {
+      vheader
     },
     methods: {
       backToFavorable () {

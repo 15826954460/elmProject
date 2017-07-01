@@ -18,7 +18,7 @@
             <span class="fa fa-angle-right"></span>
           </li>
           <li class="vip_detail">
-            <div class="vip_detail_left"><img src="../../../static/img/sheng.jpeg" alt=""></div>
+            <div class="vip_detail_left"><img :src="sheng"></div>
             <div class="vip_detail_right">
               <h4>减免配送费</h4>
               <p>每月减免30单，每日可减免3单，每单最高减4元</p>
@@ -26,7 +26,7 @@
             </div>
           </li>
           <li class="vip_detail">
-            <div class="vip_detail_left"><img src="../../../static/img/jifen.jpeg" alt=""></div>
+            <div class="vip_detail_left"><img :src="jifen"></div>
             <div class="vip_detail_right">
               <h4>减免配送费</h4>
               <p>每月减免30单，每日可减免3单，每单最高减4元</p>
@@ -82,6 +82,8 @@
     },
     data () {
       return {
+        sheng: require('../../../static/img/sheng.jpeg'),
+        jifen: require('../../../static/img/jifen.jpeg'),
         description: '/vip/description',
         exchangevip: '/vip/exchangeVip',
         shopHistory: '/vip/shophistory'

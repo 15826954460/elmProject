@@ -13,7 +13,7 @@
             <header class="content_header">
               <span class="content_title_style">当前积分</span>
               <section class="contetn_description">
-                <img src="../../../static/icon/description.png">
+                <img :src="description_img">
                 <span class="content_title_style" @click="pointdetail">积分说明</span>
               </section>
             </header>
@@ -27,7 +27,7 @@
 
         <p class="deal_detail">最近30天积分纪录</p>
         <div class="no_log">
-          <img src="../../../static/img/no-log.png">
+          <img :src="no_log_img">
           <p>最近30天无积分纪录</p>
           <p>快去下单赚取大量积分吧</p>
         </div>
@@ -49,6 +49,8 @@
   export default {
     data () {
       return {
+        description_img: require('../../../static/icon/description.png'),
+        no_log_img: require('../../../static/img/no-log.png'),
         showAlert: false,
         alertText: null
       }

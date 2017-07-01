@@ -27,7 +27,7 @@
       <h5>账号绑定</h5>
       <section class="comment self-height phone">
         <div class="icon-phone">
-          <img src="../../../../../static/icon/icon-phone.png" alt="">
+          <img :src="phone_icon">
         </div>
         <span class="phone-content" @click="phone()">手机</span>
         <span class="fa fa-angle-right flex-angle"></span>
@@ -68,6 +68,7 @@
     },
     data () {
       return {
+        phone_icon: require('../../../../../static/icon/icon-phone.png'),
         isShowAlert: false,  // 弹出框
         isShowWarning: false, // 失败
         faileShow: false,  // app中设置

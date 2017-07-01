@@ -13,12 +13,12 @@
     <h3 class="change_pay_type">选择支付方式</h3>
     <ul class="pay_type_box">
       <li class="pay_type_wrapper">
-        <div class="pay_logo"><img src="../../../static/img/zhifubao.png" alt=""></div>
+        <div class="pay_logo"><img :src="zhifubao"></div>
         <span class="pay_ch">支付宝</span>
         <span class="select_pay_type fa fa-check-circle" :class="{select:zfb}" @click="selectZFB"></span>
       </li>
       <li class="pay_type_wrapper">
-        <div class="pay_logo"><img src="../../../static/img/weixin.png" alt=""></div>
+        <div class="pay_logo"><img :src="weixin"></div>
         <span class="pay_ch">微信</span>
         <span class="select_pay_type fa fa-check-circle" :class="{select:wx}" @click="selectWX"></span>
       </li>
@@ -35,12 +35,10 @@
   import vheader from '../../components/header/header.vue'
   import alertBounced from '../../components/bounced/bounced.vue'
   export default {
-    components: {
-      vheader,
-      alertBounced
-    },
     data () {
       return {
+        zhifubao: require('../../../static/img/zhifubao.png'),
+        weixin: require('../../../static/img/weixin.png'),
         isOverTime: false, // 显示弹框
         zfb: true, // 支付宝
         wx: false,  // 微信
@@ -49,6 +47,10 @@
         timer: '',
         alertText: null
       }
+    },
+    components: {
+      vheader,
+      alertBounced
     },
     created () { // 页面一加载刷新就更改数字
       setTimeout(() => {

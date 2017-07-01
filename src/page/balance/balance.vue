@@ -14,7 +14,7 @@
             <header class="content_header">
               <span class="content_title_style">当前余额</span>
               <section class="contetn_description">
-                <img src="../../../static/icon/description.png">
+                <img :src="description_icon">
                 <span class="content_title_style" @click="balancedetail">余额说明</span>
               </section>
             </header>
@@ -28,7 +28,7 @@
 
         <p class="deal_detail">交易明细</p>
         <div class="no_log">
-          <img src="../../../static/img/no-log.png">
+          <img :src="no_log_png">
           <p>暂无明细记录</p>
         </div>
       </div>
@@ -48,6 +48,14 @@
   import vheader from '../../components/header/header.vue'
   import alertBounced from '../../components/bounced/bounced.vue'
   export default {
+    data () {
+      return {
+        description_icon: require('../../../static/icon/description.png'),
+        no_log_png: require('../../../static/img/no-log.png'),
+        showAlert: false,
+        alertText: ''
+      }
+    },
     components: {
       vheader,
       alertBounced
@@ -60,12 +68,6 @@
         this.$root.showDetail = false
       } else {
         this.$root.showDetail = true
-      }
-    },
-    data () {
-      return {
-        showAlert: false,
-        alertText: ''
       }
     },
     methods: {

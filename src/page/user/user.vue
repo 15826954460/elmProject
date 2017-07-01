@@ -39,23 +39,23 @@
           </ul>
           <ul class="about-elm">
             <router-link tag="li" to="/order">
-              <span><img src="../../../static/icon/01.png" alt=""></span><span>我的订单</span><span
+              <span><img :src="order_icon"></span><span>我的订单</span><span
               class="fa fa-angle-right"></span>
             </router-link>
             <router-link to="/integral" tag="li">
-              <span><img src="../../../static/icon/02.png" alt=""></span><span>积分商城</span><span
+              <span><img :src="integral_icon"></span><span>积分商城</span><span
               class="fa fa-angle-right"></span>
             </router-link>
             <router-link to="/vip" tag="li">
-              <span><img src="../../../static/icon/03.png" alt=""></span><span>饿了么会员卡</span><span
+              <span><img :src="vip_icon"></span><span>饿了么会员卡</span><span
               class="fa fa-angle-right"></span>
             </router-link>
             <router-link to="/service" tag="li">
-              <span><img src="../../../static/icon/04.png" alt=""></span><span>服务中心</span><span
+              <span><img :src="service_icon" ></span><span>服务中心</span><span
               class="fa fa-angle-right"></span>
             </router-link>
             <router-link tag="li" to="/download">
-              <span><img src="../../../static/icon/05.png" alt=""></span><span>下载我了么APP</span><span
+              <span><img :src="download_icon" ></span><span>下载我了么APP</span><span
               class="fa fa-angle-right"></span>
             </router-link>
           </ul>
@@ -75,7 +75,13 @@
   import vfoot from '../../components/footer/footNav.vue'
   export default {
     data () {
-      return {}
+      return {
+        order_icon: require('../../../static/icon/01.png'),
+        integral_icon: require('../../../static/icon/02.png'),
+        vip_icon: require('../../../static/icon/03.png'),
+        service_icon: require('../../../static/icon/04.png'),
+        download_icon: require('../../../static/icon/05.png')
+      }
     },
     components: {
       vfoot,

@@ -1,8 +1,9 @@
 <template>
   <div class="star">
-    <i v-for="n in parseInt(countType.onCount)" class="onCount"></i>
-    <i v-for="n in parseInt(countType.halfCount)" class="halfCount"></i>
-    <i v-for="n in parseInt(countType.offCount)" class="offCount"></i>
+    {{countType}}
+    <i v-for="n in parseInt(countType.onCount)" class="onCount" :style="{backgroundImage:'url('+ onCount_bg + ')'}"></i>
+    <i v-for="n in parseInt(countType.halfCount)" class="halfCount" :style="{backgroundImage:'url('+ halfCount_bg + ')'}"></i>
+    <i v-for="n in parseInt(countType.offCount)" class="offCount" :style="{backgroundImage:'url('+ offCount_bg + ')'}"></i>
   </div>
 </template>
 
@@ -15,7 +16,10 @@
         onCount: 0, // 满星的个数
         offCount: 0, // 全灰的个数
         halfCount: 0, // 半星的个数
-        allNum: 5
+        allNum: 5,
+        onCount_bg: require('../../../static/star/star36_on@2x.png'),
+        offCount_bg: require('../../../static/star/star36_off@2x.png'),
+        halfCount_bg: require('../../../static/star/star36_half@2x.png')
       }
     },
     computed: {

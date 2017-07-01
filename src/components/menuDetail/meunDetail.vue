@@ -5,7 +5,7 @@
     </vheader>
     <section class="content_wrapper">
 
-      <img :src="getImgPath(foods.image_path)" alt="">
+      <img :src="getImgPath(foods.image_path)">
       <div class="content">
         <p>{{foods.description}}</p>
         <div>

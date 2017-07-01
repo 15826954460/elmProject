@@ -23,7 +23,7 @@
           <p class="content_title_style" v-show="negative">有 <span style="color:red;font-weight:bold;">7</span> 个红包即将到期
         </p>
           <section class="contetn_description">
-            <img src="../../../static/icon/description.png">
+            <img :src="description_png">
             <span @click="favorableIntro('favorableIntro')" class="content_title_style" v-show="negative">积分说明
           </span>
             <span class="content_title_style" v-show="!negative" @click="favorableIntro('jinjuan')">商家代金卷</span>
@@ -52,26 +52,19 @@
                 <ul>
                   <li v-for="(limit, index) in item.extra_limit" :key="index">
                     {{limit}}
-
-
-
                   </li>
                 </ul>
               </footer>
             </li>
           </ul>
         </transition>
-
-
         <transition name="router-fade" mode="out-in">
           <section class="unable_use" v-show="!negative">
-            <img src="../../../static/img/voucher.png" height="170" width="300">
+            <img :src="voucher_png" height="170" width="300">
             <p>无法使用代金券</p>
             <p>非客户端或客户端版本过低</p>
             <router-link to="/download" class="download_app" tag="button">
               下载或升级客户端
-
-
             </router-link>
           </section>
         </transition>
@@ -100,13 +93,15 @@
 <script>
   import vheader from '../../components/header/header.vue'
   export default {
-    components: {
-      vheader
-    },
     data () {
       return {
+        description_png: require('../../../static/icon/description.png'),
+        voucher_png: require('../../../static/img/voucher.png'),
         negative: true
       }
+    },
+    components: {
+      vheader
     },
     computed: {
       hongbaoList () {

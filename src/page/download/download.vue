@@ -6,7 +6,7 @@
     </vheader>
 
     <div class='downLoad-content-wrapper'>
-      <div class='img-wrapper'><img src='../../../static/logo/elmlogo.jpeg' alt=''></div>
+      <div class='img-wrapper'><img :src='ele_logo'></div>
       <p class='down-text'>下载饿了么App</p>
       <button class='download-btn' @click='download'>下载</button>
     </div>
@@ -20,16 +20,17 @@
   import vheader from '../../components/header/header.vue'
   import alertBounced from '../../components/bounced/bounced.vue'
   export default {
-    components: {
-      vheader,
-      alertBounced
-    },
     data () {
       return {
+        ele_logo: require('../../../static/logo/elmlogo.jpeg'),
         system: null,
         alertText: '', // 弹框内容
         showAlert: false // 弹框
       }
+    },
+    components: {
+      vheader,
+      alertBounced
     },
     created () {
       // 判断系统

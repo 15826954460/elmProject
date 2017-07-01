@@ -11,7 +11,7 @@
           <li class="service_left">
             <a href="https://ecs-im.ele.me/" class="service_left_a">
             <dl>
-              <dd><img src="../../../static/img/serviceinline.png" alt=""></dd>
+              <dd><img :src="serviceinline"></dd>
               <dd>在线客服</dd>
             </dl>
             </a>
@@ -19,7 +19,7 @@
           <li class="service_right">
             <a href="tel:10105757" class="service_right_a">
               <dl>
-                <dd><img src="../../../static/img/servicephone.png" alt=""></dd>
+                <dd><img :src="servicephone"></dd>
                 <dd>在线客服</dd>
               </dl>
             </a>
@@ -49,7 +49,10 @@
   import vheader from '../../components/header/header.vue'
   export default {
     data () {
-      return {}
+      return {
+        serviceinline: require('../../../static/img/serviceinline.png'),
+        servicephone: require('../../../static/img/servicephone.png')
+      }
     },
     computed: {
       serviceList () { // 获取列表数据

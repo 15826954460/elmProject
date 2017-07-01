@@ -10,7 +10,7 @@
       <section class="input_container captcha_code_container">
         <input type="text" placeholder="验证码" maxlength="4" v-model="codeNumber" @input="yzm">
         <div class="img_change_img">
-          <img src="../../../../../static/img/yzm.jpg">
+          <img :src="yzm_img">
           <div class="change_img" @click="">
             <p>换一张</p>
           </div>
@@ -35,6 +35,7 @@
     },
     data () {
       return {
+        yzm_img: require('../../../../../static/img/yzm.jpg'),
         exchangeCode: '',
         codeNumber: '',
         showAlert: false,  // 弹框

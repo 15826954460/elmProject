@@ -7,19 +7,19 @@
     </vheader>
 
     <section class="activity_banner">
-      <img src="../../../../../static/img/activity.png">
+      <img :src="activity_img">
     </section>
     <section class="invite_firend">
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/weixin.png">
+        <img :src="weixin_img">
         <p>邀请微信好友</p>
       </div>
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/qq.png">
+        <img :src="qq_img">
         <p>邀请QQ好友</p>
       </div>
       <div class="invite_firend_style" @click="alert_bounced">
-        <img src="../../../../../static/img/fenxiang.png">
+        <img :src="fenxiang_img">
         <p>面对面邀请</p>
       </div>
     </section>
@@ -35,7 +35,7 @@
     </section>
     <p class="income_detail">-收益明细-</p>
     <section class="incom_tips">
-      <img src="../../../../../static/img/qianbao.png">
+      <img :src="qianbao_img">
       <p>还不赶紧去邀请好友</p>
     </section>
 
@@ -48,15 +48,20 @@
   import vheader from '../../../../components/header/header.vue'
   import bounced from '../../../../components/bounced/bounced.vue'
   export default {
-    components: {
-      vheader,
-      bounced
-    },
     data () {
       return {
+        activity_img: require('../../../../../static/img/activity.png'),
+        weixin_img: require('../../../../../static/img/weixin.png'),
+        qq_img: require('../../../../../static/img/qq.png'),
+        fenxiang_img: require('../../../../../static/img/fenxiang.png'),
+        qianbao_img: require('../../../../../static/img/qianbao.png'),
         showAlert: false,
         alertText: ''
       }
+    },
+    components: {
+      vheader,
+      bounced
     },
     methods: {
       backToFavorable () {

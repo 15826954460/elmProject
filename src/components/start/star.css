@@ -131,14 +131,14 @@ img {
   height: 0.16rem;
 }
 .onCount {
-  background: url(../../../static/star/star36_on@2x.png) no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 .offCount {
-  background: url(../../../static/star/star36_off@2x.png) no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 .halfCount {
-  background: url(../../../static/star/star36_half@2x.png) no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
