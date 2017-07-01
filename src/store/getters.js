@@ -29,3 +29,4 @@ export const tage = state => state.tage
 export const addAddress = state => state.confirmOrderData.addAddress
 export const addressList = state => state.confirmOrderData.addressList
 export const checkout = state => state.confirmOrderData.checkout
+export const cnofirmShowChildren = state => state.cnofirmShowChildren

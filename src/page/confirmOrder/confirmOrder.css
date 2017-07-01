@@ -146,6 +146,7 @@ img {
 }
 .confirm_box .confirm_order_wrapper {
   padding-top: 0.8rem;
+  padding-bottom: 1.5rem;
   min-height: 100vh;
   background: #f7f7f7;
 }
@@ -303,4 +304,59 @@ img {
 .confirm_box .confirm_order_wrapper .food_list .food_item_style .num_price span:first-child {
   color: #FF9900;
   font-weight: bold;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note {
+  border-bottom: 1px solid #ddd;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice {
+  line-height: .8rem;
+  background: #fff;
+  font-size: 14px;
+  padding-right: 20px;
+  position: relative;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note span,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice span {
+  float: left;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note p,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice p {
+  display: inline-block;
+  float: right;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note i,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice i {
+  right: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.confirm_box .footer_container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+  height: 1rem;
+  line-height: 1rem;
+  display: flex;
+  display: -webkit-flex;
+}
+.confirm_box .footer_container .wait_pay {
+  flex: 2;
+  background: #3c3c3c;
+  padding-left: 10px;
+}
+.confirm_box .footer_container .confirm_order {
+  flex: 1;
+  text-align: center;
+  background: #56D176;
+  color: #fff;
 }

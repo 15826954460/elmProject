@@ -1,0 +1,123 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+div:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  vertical-align: middle;
+}
+.inb {
+  display: inline-block;
+}
+.b {
+  display: block;
+}
+.pc {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.fw {
+  font-weight: bold;
+}
+.cur {
+  cursor: pointer;
+}
+.td {
+  text-decoration: underline;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+.at {
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.br {
+  border: 1px solid red;
+}
+.order_note_wrapper {
+  font-size: 12px;
+}

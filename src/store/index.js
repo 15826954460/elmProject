@@ -48,7 +48,8 @@ const state = {
   ratingList: [], // 商品评价列表
   scores: {},
   tage: [], // 评价信息分类
-  confirmOrderData: []
+  confirmOrderData: [],
+  cnofirmShowChildren: false
 }
 
 export default new Vuex.Store({

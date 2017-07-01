@@ -1,6 +1,6 @@
 <template>
   <div class="confirm_box">
-    <div class="confirm_order_wrapper">
+    <div class="confirm_order_wrapper" v-show="!cnofirmShowChildren">
       <vhead message="确认订单">
         <span class="fa fa-angle-left" slot="angle" @click="$router.go(-1)"></span>
         <router-link to="/user" class="fa fa-user-o" slot="fa-user-o" tag="span"></router-link>
@@ -74,14 +74,30 @@
         </div>
       </section>
 
-    </div>
-  </div>
+      <div class="note_wrapper">
+        <div class="note" @click="goToNoteOrInvoice('orderNote')">
+          <span>订单备注</span>
+          <p>口味、偏好</p>
+          <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="invoice" @click="goToNoteOrInvoice('invoice')">
+          <span>发票</span>
+          <p>不需要开发票</p>
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
 
+      <footer class="footer_container">
+        <span class="wait_pay" v-if="checkout">待支付 ￥{{checkout.cart.total}}</span>
+        <span class="confirm_order">确认下单</span>
+      </footer>
+    </div>
+    <router-view></router-view>
+  </div>
 </template>
 <script>
   import {mapGetters} from 'vuex'
   import vhead from '../../components/header/header.vue'
-//  import {imgBaseUrl} from '../../mixin/getPath'
   export default {
     data () {
       return {
@@ -91,8 +107,16 @@
     components: {
       vhead
     },
+    mounted () {
+      console.log(this.$store.getters.addressList)
+      if (window.sessionStorage.getItem('cnofirmShowChildren') === null || window.sessionStorage.getItem('cnofirmShowChildren') === 'false') {
+        this.$store.commit('setCnofirmShowChildren', false)
+      } else {
+        this.$store.commit('setCnofirmShowChildren', true)
+      }
+    },
     computed: {
-      ...mapGetters(['checkout']),
+      ...mapGetters(['checkout', 'cnofirmShowChildren']),
       addressList () {
         let address = ''
         if (!this.$store.getters.addressList) {
@@ -105,6 +129,12 @@
     },
     methods: {
       showPayWayFun () {
+      },
+      goToNoteOrInvoice (adv) {
+        console.log(adv)
+        this.$router.push({path: '/confirmOrder/' + adv})
+        this.$store.commit('setCnofirmShowChildren', true)
+        window.sessionStorage.setItem('cnofirmShowChildren', true)
       }
     }
   }

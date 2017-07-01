@@ -35,6 +35,8 @@ import shop from '@/page/shop/shop'
 import shopdetail from '@/page/shop/shopDetail/shopDetail'
 import shopSafe from '@/page/shop/shopDetail/shopSafe/shopSafe'
 import confirmOrder from '@/page/confirmOrder/confirmOrder'
+import orderNote from '@/page/confirmOrder/orderNote/orderNote'
+import invoice from '@/page/confirmOrder/invoice/invoice'
 
 Vue.use(Router)
 
@@ -216,7 +218,17 @@ export default new Router({
     // 确认订单页
     {
       path: '/confirmOrder',
-      component: confirmOrder
+      component: confirmOrder,
+      children: [
+        {
+          path: 'orderNote',
+          component: orderNote
+        },
+        {
+          path: 'invoice',
+          component: invoice
+        }
+      ]
     }
   ]
 })

@@ -79,3 +79,6 @@ export const setTage = (state, tage) => {
 export const setConfirmData = (state, confirmOrderData) => {
   state.confirmOrderData = confirmOrderData
 }
+export const setCnofirmShowChildren = (state, cnofirmShowChildren) => {
+  state.cnofirmShowChildren = cnofirmShowChildren
+}
