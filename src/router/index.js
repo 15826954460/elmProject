@@ -38,6 +38,7 @@ import confirmOrder from '@/page/confirmOrder/confirmOrder'
 import orderNote from '@/page/confirmOrder/orderNote/orderNote'
 import invoice from '@/page/confirmOrder/invoice/invoice'
 import login from '@/page/login/login'
+import resetSecret from '@/page/resetSecret/resetSecret'
 
 Vue.use(Router)
 
@@ -235,6 +236,11 @@ export default new Router({
     {
       path: '/login',
       component: login
+    },
+    // 重置密码页面
+    {
+      path: '/resetSecret',
+      component: resetSecret
     }
   ]
 })

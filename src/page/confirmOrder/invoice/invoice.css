@@ -118,6 +118,60 @@ img {
 .br {
   border: 1px solid red;
 }
-.order_note_wrapper {
+.animateChildren .children-slide-enter-active {
+  animation: children-slide-in 0.5s linear;
+}
+@keyframes children-slide-in {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animateParent .parent-slide-enter-active {
+  animation: parent-slide-in 0.5s linear;
+}
+@keyframes parent-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.invoice_wrapper {
   font-size: 12px;
+  padding-top: 1.2rem;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+.invoice_wrapper .invoice_info {
+  background: #fff;
+  padding: .2rem;
+  font-size: 14px;
+  margin-bottom: 0.2rem;
+}
+.invoice_wrapper .invoice_info i {
+  float: right;
+  font-size: 20px;
+}
+.invoice_wrapper .invoice_info .click {
+  color: #4CD964;
+}
+.invoice_wrapper .btn {
+  width: 95%;
+  background: #4CD964;
+  color: #fff;
+  font-size: 16px;
+  line-height: .8rem;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }

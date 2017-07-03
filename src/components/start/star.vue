@@ -1,6 +1,5 @@
 <template>
   <div class="star">
-    {{countType}}
     <i v-for="n in parseInt(countType.onCount)" class="onCount" :style="{backgroundImage:'url('+ onCount_bg + ')'}"></i>
     <i v-for="n in parseInt(countType.halfCount)" class="halfCount" :style="{backgroundImage:'url('+ halfCount_bg + ')'}"></i>
     <i v-for="n in parseInt(countType.offCount)" class="offCount" :style="{backgroundImage:'url('+ offCount_bg + ')'}"></i>

@@ -11,7 +11,6 @@ export const groupCity = state => state.group_city
 export const hotCity = state => state.hot_city
 export const searchData = state => state.search_data
 export const shopList = state => state.shopList
-// export const orderId = state => state.orderId
 export const userInfo = state => state.userInfo
 export const addDetail = state => state.add_detail
 export const address = state => state.address
@@ -21,12 +20,13 @@ export const service = state => state.service
 export const hongbaoList = state => state.hongbaoList
 export const shopDetails = state => state.shopDetails
 export const shopMenu = state => state.shopMenu
-// export const shopCartList = state => state.shopCartList
 export const foodsList = state => state.foodsList
 export const ratingList = state => state.ratingList
 export const scores = state => state.scores
 export const tage = state => state.tage
 export const addAddress = state => state.confirmOrderData.addAddress
-export const addressList = state => state.confirmOrderData.addressList
+// export const addressList = state => state.confirmOrderData.addressList
 export const checkout = state => state.confirmOrderData.checkout
+export const remark = state => state.confirmOrderData.remark
 export const cnofirmShowChildren = state => state.cnofirmShowChildren
+export const remarkObj = state => state.remarkObj

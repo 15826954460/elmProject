@@ -68,6 +68,7 @@
     <transition name="children-slide" mode="out-in">
       <router-view></router-view>
     </transition>
+
   </div>
 </template>
 <script>

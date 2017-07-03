@@ -31,7 +31,7 @@
             <img :src="getImgPath(shopDetail.image_path)">
           </div>
 
-          <i class="fa fa-angle-left" @click="$router.go(-1)"></i>
+          <i class="fa fa-angle-left" @click="goToMenu"></i>
 
         </header>
         <!--介绍详情-->
@@ -168,7 +168,7 @@
         </transition>
         <!--评价信息-->
         <transition name="appraise-info" mode="out-in">
-          <section class="appraise_wrapper" v-show="!negativeProduct">
+          <section class="appraise_wrapper" v-if="!negativeProduct">
 
             <section class="appraise_info">
               <div class="appraise_info_left">
@@ -183,7 +183,7 @@
                     <vstar :rating='scores.service_score'></vstar>
                     <span>{{scores.service_score}}</span></li>
                   <li><span>菜品评价</span>
-                    <vstar :rating='scores.food_score'></vstar>
+                    <!--<vstar :rating='scores.food_score'></vstar>-->
                     <span>{{scores.food_score}}</span></li>
                   <li><span>送达时间</span>{{scores.deliver_time}}<span>分钟</span></li>
                 </ul>
@@ -522,9 +522,12 @@
       },
       specsCurrentIndex (index) {
         this.specsIndex = index
+      },
+      goToMenu () {
+        this.$router.push({path: '/menu'})
       }
     },
-    created () {
+    mounted () {
       //  页面刷新判断是否需要显示商品详情列表
       window.localStorage.getItem('showShop') === null ? this.$root.showShop = true : window.localStorage.getItem('showShop') === 'false' ? this.$root.showShop = false : this.$root.showShop = true
       // 页面刷新就获取是否显示减少按钮的状态

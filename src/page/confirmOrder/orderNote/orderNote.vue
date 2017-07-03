@@ -4,24 +4,35 @@
       <span class="fa fa-angle-left" slot="angle" @click="backToConfirmOrder"></span>
     </vhead>
     <div class="speed_note">
-      <span v-for="item in nodeType">{{item}}</span>
+      <p class="speed_note_title">快速备注</p>
+      <ul class="speed_note_type" v-if="remark">
+        <li v-for="(items, itemsIndex) in remark.remarks" class="remark_list_li">
+          <span v-for="(item, itemIndex) in items"
+                class="remark_list_span"
+                :class="{other: itemIndex !== 0 && itemIndex !== (items.length -1),
+                first: itemIndex === 0, last: itemIndex === (items.length -1), choose: remarkObj[itemsIndex]&&(remarkObj[itemsIndex][0] === itemIndex)}"
+                @click="chioceType(item, itemsIndex, itemIndex)">{{item}}</span>
+        </li>
+      </ul>
     </div>
     <div class="other_note">
-      <span>其他备注</span>
+      <p class="other_note_p">其他备注</p>
       <textarea name="" id="" cols="30" rows="4" placeholder="请输入备注内容（可不填）"></textarea>
     </div>
-    <span>确定</span>
+    <p class="speed_btn" @click="goToConfirmOrder">确定</p>
   </div>
 </template>
 <script>
   import vhead from '../../../components/header/header.vue'
+  import {mapGetters} from 'vuex'
   export default {
     data () {
       return {
-        nodeType: [
-          '不要辣', '少点辣', '多点辣', '不要香菜', '不要洋葱', '多点醋', '多点葱', '去冰', '少冰'
-        ]
+        remarkObj: {}
       }
+    },
+    computed: {
+      ...mapGetters(['remark'])
     },
     components: {
       vhead
@@ -29,7 +40,19 @@
     methods: {
       backToConfirmOrder () {
         this.$router.push({path: '/confirmOrder'})
-        window.sessionStorage.setItem('cnofirmShowChildren', false)
+        window.localStorage.setItem('cnofirmShowChildren', false)
+        this.$store.commit('setCnofirmShowChildren', false)
+      },
+      // 多个列表累加选择
+      chioceType (item, itemsIndex, itemIndex) {
+        this.remarkObj[itemsIndex] = [itemIndex, item]
+        this.remarkObj = Object.assign({}, this.remarkObj)
+        window.localStorage.setItem('remarkObj', JSON.stringify(this.remarkObj))
+        this.$store.commit('setRemarkObj', this.remarkObj)
+      },
+      goToConfirmOrder () {
+        this.$router.push({path: '/confirmOrder'})
+        window.localStorage.setItem('cnofirmShowChildren', false)
         this.$store.commit('setCnofirmShowChildren', false)
       }
     }

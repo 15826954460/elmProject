@@ -49,7 +49,8 @@ const state = {
   scores: {},
   tage: [], // 评价信息分类
   confirmOrderData: [],
-  cnofirmShowChildren: false
+  cnofirmShowChildren: false,
+  remarkObj: {}
 }
 
 export default new Vuex.Store({

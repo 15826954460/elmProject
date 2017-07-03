@@ -123,7 +123,7 @@ img {
 }
 @keyframes children-slide-in {
   0% {
-    transform: translateX(50%);
+    transform: translateX(20%);
     opacity: 0;
   }
   80% {
@@ -267,6 +267,9 @@ img {
 .confirm_box .confirm_order_wrapper .pay_way .hongbo {
   line-height: 1rem;
 }
+.confirm_box .confirm_order_wrapper .pay_way .hongbo .app_support {
+  float: right;
+}
 .confirm_box .confirm_order_wrapper .food_list {
   font-size: .24rem;
   background: #fff;
@@ -325,10 +328,18 @@ img {
 .confirm_box .confirm_order_wrapper .note_wrapper .invoice span {
   float: left;
 }
-.confirm_box .confirm_order_wrapper .note_wrapper .note p,
-.confirm_box .confirm_order_wrapper .note_wrapper .invoice p {
+.confirm_box .confirm_order_wrapper .note_wrapper .note .no_invoice,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice .no_invoice {
+  float: right;
+}
+.confirm_box .confirm_order_wrapper .note_wrapper .note .taste,
+.confirm_box .confirm_order_wrapper .note_wrapper .invoice .taste {
   display: inline-block;
   float: right;
+  max-width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .confirm_box .confirm_order_wrapper .note_wrapper .note i,
 .confirm_box .confirm_order_wrapper .note_wrapper .invoice i {
@@ -359,4 +370,30 @@ img {
   text-align: center;
   background: #56D176;
   color: #fff;
+}
+.children-slide-enter-active {
+  animation: children-slide-in 0.5s linear;
+}
+@keyframes children-slide-in {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.parent-slide-enter-active {
+  animation: parent-slide-in 0.5s linear;
+}
+@keyframes parent-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

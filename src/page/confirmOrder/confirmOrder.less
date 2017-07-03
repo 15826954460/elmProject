@@ -1,11 +1,6 @@
 @import '../../common/reset.less';
 @import '../../common/comment.less';
-@import '../../common/animate';
-
-@background: #3190E8;
-@4D: #4D4D4D;
-@f7: #f7f7f7;
-@orange: #FF9900;
+@import '../../common/animate.less';
 .confirm_box {
   .confirm_order_wrapper {
     .pt(.8rem);
@@ -112,6 +107,9 @@
       }
       .hongbo {
         line-height: 1rem;
+        .app_support{
+          .rf;
+        }
       }
     }
     .food_list {
@@ -164,9 +162,14 @@
         span{
           .lf;
         }
-        p{
+        .no_invoice{
+          .rf;
+        }
+        .taste{
           .inb;
           .rf;
+          max-width:60%;
+          .ellipsis;
         }
         i{
           .abs;
@@ -199,3 +202,5 @@
     }
   }
 }
+.animateChildren;
+.animateParent;

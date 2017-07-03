@@ -82,3 +82,6 @@ export const setConfirmData = (state, confirmOrderData) => {
 export const setCnofirmShowChildren = (state, cnofirmShowChildren) => {
   state.cnofirmShowChildren = cnofirmShowChildren
 }
+export const setRemarkObj = (state, remarkObj) => {
+  state.remarkObj = remarkObj
+}
