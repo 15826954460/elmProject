@@ -8,6 +8,7 @@
     <slot name="fa-search"></slot>
     <slot name="edit"></slot>
     <slot name="login"></slot>
+    <slot name="reset_secret"></slot>
   </header>
 </template>
 <script>

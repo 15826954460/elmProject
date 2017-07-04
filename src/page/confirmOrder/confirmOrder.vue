@@ -5,13 +5,17 @@
       <div class="confirm_order_wrapper" v-show="!cnofirmShowChildren">
         <vhead message="确认订单">
           <span class="fa fa-angle-left" slot="angle" @click="goToShop"></span>
-          <router-link to="/login" slot="login" tag="span" class="login" @click="login">登陆|注册</router-link>
+          <router-link to="/login" slot="login" tag="span" class="login"
+                       v-if="isShowLogin">登陆|注册
+          </router-link>
+          <router-link to="/resetSecret" tag="span" slot="reset_secret"
+                       class="reset_secret" v-else>重置密码</router-link>
         </vhead>
-        <router-link to="">
+        <div>
           <div class="address_empty_left">
             <div class="map_wrapper"><span class="fa fa-map-marker"></span></div>
-            <div class="add_address" v-if="showAddressDetail">请添加一个收获地址</div>
-            <div class="address_detail add_address" v-if="!showAddressDetail">
+            <div class="add_address" v-if="showAddAddress" @click="goToChildrenRouter('chooseAddress')">请添加一个收获地址</div>
+            <div class="address_detail add_address" v-if="!showAddAddress">
               <header>
                 <span class="family_name">{{addressList.name}}1</span>
                 <span class="sex">{{addressList.sex}}1</span>
@@ -24,7 +28,7 @@
             </div>
             <span class="fa fa-angle-right"></span>
           </div>
-        </router-link>
+        </div>
         <section class="delivery_model container_style">
           <p class="deliver_text">送达时间</p>
           <div class="deliver_time" v-if="checkout">
@@ -77,13 +81,13 @@
         </section>
 
         <div class="note_wrapper">
-          <div class="note" @click="goToNoteOrInvoice('orderNote')">
+          <div class="note" @click="goToChildrenRouter('orderNote')">
             <span>订单备注</span>
             <p class="taste" v-if="Object.keys(remarkObj).length === 0">口味、偏好</p>
             <p class="taste" v-else><span v-for="(item, index) in remarkObj">{{item[1]}}、</span></p>
             <i class="fa fa-angle-right"></i>
           </div>
-          <div class="invoice" @click="goToNoteOrInvoice('invoice')">
+          <div class="invoice" @click="goToChildrenRouter('invoice')">
             <span>发票</span>
             <p class="no_invoice">不需要开发票</p>
             <i class="fa fa-angle-right"></i>
@@ -114,10 +118,10 @@
     data () {
       return {
         imgBaseUrl: 'https://fuss10.elemecdn.com',
-        addressList: {}, // 收获地址
-        showAddressDetail: true,
-        showAlert: false,
-        alertText: ''
+        addressList: {}, // 地址列表
+        showAddAddress: true, // 显示添加地址
+        showAlert: false,  // 显示弹框
+        alertText: '' // 弹框内容
       }
     },
     components: {
@@ -125,28 +129,34 @@
       alertBounced
     },
     mounted () {
+      // 是否显示子路由
       if (window.localStorage.getItem('cnofirmShowChildren') === null || window.localStorage.getItem('cnofirmShowChildren') === 'false') {
         this.$store.commit('setCnofirmShowChildren', false)
       } else {
         this.$store.commit('setCnofirmShowChildren', true)
       }
+      // 页面刷新从本地获取用户的地址信息
       if (window.localStorage.getItem('addressList') === null) {
-        this.showAddressDetail = true
+        this.showAddAddress = true
       } else {
-        this.showAddressDetail = false
+        this.showAddAddress = false
         this.addressList = JSON.parse(window.localStorage.getItem('addressList'))
       }
+      // 页面刷新依然显示用户选择的订单备注
       if (window.localStorage.getItem('remarkObj') !== null) {
         this.$store.commit('setRemarkObj', JSON.parse(window.localStorage.getItem('remarkObj')))
       } else {
         this.$store.commit('setRemarkObj', {})
       }
+      // 页面刷新判断是否显示登陆注册
       if (window.localStorage.getItem('userInfo') === null) {
-
+        this.$store.commit('setIsShowLogin', true)
+      } else {
+        this.$store.commit('setIsShowLogin', false)
       }
     },
     computed: {
-      ...mapGetters(['checkout', 'cnofirmShowChildren', 'remarkObj'])
+      ...mapGetters(['checkout', 'cnofirmShowChildren', 'remarkObj', 'isShowLogin'])
 //      addressList () {
 //        if (window.sessionStorage.getItem('addressList') === null) {
 //          return ''
@@ -156,7 +166,7 @@
 //      }
     },
     methods: {
-      goToNoteOrInvoice (adv) { // 切换到子组件是否需要发票
+      goToChildrenRouter (adv) { // 切换到子路由
         this.$router.push({path: '/confirmOrder/' + adv})
         this.$store.commit('setCnofirmShowChildren', true)
         window.localStorage.setItem('cnofirmShowChildren', true)
@@ -165,15 +175,19 @@
         this.$router.push({path: '/shop'})
         window.localStorage.setItem('cnofirmShowChildren', false)
       },
-      showPayWayFun () {},
-      configPay () { // 确认订单
-        if (window.localStorage.getItem('userLoginIngo') === null) {
-          this.showAlert = true
-          this.alertText = '请登录'
-        } else { }
+      showPayWayFun () {
       },
-      login () {
-
+      configPay () { // 确认订单
+        if (window.localStorage.getItem('userInfo') === null) {
+          this.alertText = '请登录'
+          this.showAlert = true
+        } else {
+          if (this.showAddAddress === true) {
+            this.alertText = '请添加您的收获地址'
+            this.showAlert = true
+          } else {
+          }
+        }
       }
     }
   }

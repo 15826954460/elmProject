@@ -2,7 +2,6 @@
   <div class="order-box">
 
     <transition name="parent-slide" mode="out-in">
-
       <div v-show="$root.isShowOrderDetail" class="order-wrapper">
 
         <vheader message="订单列表">

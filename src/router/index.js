@@ -37,6 +37,9 @@ import shopSafe from '@/page/shop/shopDetail/shopSafe/shopSafe'
 import confirmOrder from '@/page/confirmOrder/confirmOrder'
 import orderNote from '@/page/confirmOrder/orderNote/orderNote'
 import invoice from '@/page/confirmOrder/invoice/invoice'
+import chooseAddress from '@/page/confirmOrder/chooseAddress/chooseAddress'
+import address from '@/page/confirmOrder/chooseAddress/address/address'
+import addAddress from '@/page/confirmOrder/chooseAddress/address/addAddress/addAddress'
 import login from '@/page/login/login'
 import resetSecret from '@/page/resetSecret/resetSecret'
 
@@ -229,6 +232,22 @@ export default new Router({
         {
           path: 'invoice',
           component: invoice
+        },
+        {
+          path: 'chooseAddress',
+          component: chooseAddress,
+          children: [
+            {
+              path: 'address',
+              component: address,
+              children: [
+                {
+                  path: 'addAddress',
+                  component: addAddress
+                }
+              ]
+            }
+          ]
         }
       ]
     },

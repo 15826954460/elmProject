@@ -5,7 +5,7 @@
     </vheader>
     <section class="shopLogo" v-if="orderNegative.orderList">
       <div class="shopLogo-img">
-        <img :src="orderNegative.orderList.restaurant_image_url" alt="">
+        <img :src="orderNegative.orderList.restaurant_image_url">
       </div>
       <h2>{{orderNegative.orderList.timeline_node.title}}</h2>
       <p class="cancle-reason" v-if="orderNegative.orderList">{{orderNegative.orderList.timeline_node.description}}</p>
@@ -13,13 +13,13 @@
     </section>
 
     <section class="shopDetail"  v-if="orderNegative.orderList && orderNegative.orderDetail">
-      <router-link to="/user" tag="div">
+      <div @click="goToUser">
         <div>
-          <img :src="orderNegative.orderList.restaurant_image_url" alt="">
+          <img :src="orderNegative.orderList.restaurant_image_url">
         </div>
         <p>{{orderNegative.orderDetail.restaurant_name}}</p>
         <span class="fa fa-angle-right"></span>
-      </router-link>
+      </div>
       <ul>
         <li v-for="(group, groupIndex) in orderNegative.orderDetail.basket.group[0]">
           <span>{{group.name}}</span><span>{{group.quantity | formatN('x')}}</span><span>{{group.price | formatM('￥')}}</span>
@@ -61,9 +61,16 @@
     },
     methods: {
       backToOrder () {
+        this.$router.push({path: '/order'})
+        this.commentCode()
+      },
+      goToUser () {
+        this.$router.push({path: '/user'})
+        this.commentCode()
+      },
+      commentCode () {
         this.$root.isShowOrderDetail = true
         window.localStorage.setItem('isShowOrderDetail', true) // 保存状态，在父路由中刷新页面时起作用
-        this.$router.push({path: '/order'})
       }
     },
     filters: {

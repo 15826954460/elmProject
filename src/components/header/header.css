@@ -1,54 +1,3 @@
-@charset "utf-8";
-* {
-  box-sizing: border-box;
-}
-body {
-  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
-  color: #666;
-  margin: 0;
-  padding: 0;
-}
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-dl,
-dt,
-dd {
-  margin: 0;
-  padding: 0;
-  border: none;
-  list-style: none;
-}
-.lf {
-  float: left;
-}
-.rf {
-  float: right;
-}
-.clear {
-  clear: both;
-}
-a {
-  text-decoration: none;
-}
-a :hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-div:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-img {
-  vertical-align: middle;
-}
 .inb {
   display: inline-block;
 }
@@ -118,6 +67,15 @@ img {
 .br {
   border: 1px solid red;
 }
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
 .comment_header {
   height: .8rem;
   line-height: .8rem;
@@ -172,19 +130,12 @@ img {
   transform: translateY(-50%);
   left: .3rem;
 }
-.comment_header .edit {
+.comment_header .edit,
+.comment_header .login,
+.comment_header .reset_secret {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: .3rem;
   font-weight: normal;
-}
-.comment_header .login {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: .3rem;
-}
-.comment_header .login:hover {
-  cursor: pointer;
 }

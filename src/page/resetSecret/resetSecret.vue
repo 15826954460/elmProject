@@ -69,22 +69,18 @@
             this.alertText = '请输入正确的账号'
             this.ZH = ''
           } else if (this.OMA !== userInfo.pwd) {
-            console.log(typeof this.OMA)
-            console.log(userInfo.pwd === this.OMA)
-            console.log(typeof this.OMA)
             this.alertText = '请输入正确的密码'
             this.OMA = ''
           } else if (this.NMA !== this.CNMM) {
             this.alertText = '请重新输入密码'
             this.NMA = ''
-            this.CNNA = ''
+            this.CNMM = ''
           } else {
             let newUserInfo = {}
             newUserInfo.userName = userInfo.userName
             newUserInfo.pwd = this.NMA
             window.localStorage.setItem('userInfo', JSON.stringify(newUserInfo))
-            this.router.push({path: '/confirmOrder'})
-//            this.ctrlAlert = false
+            this.$router.push({path: '/confirmOrder'})
           }
         }
         this.showAlert = true

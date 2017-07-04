@@ -32,7 +32,8 @@
   }
 </script>
 
-<style>
+<style lang="css">
+  @import './common/reset.css';
   .router-fade-enter-active, .router-fade-leave-active {
     transition: opacity .3s;
   }

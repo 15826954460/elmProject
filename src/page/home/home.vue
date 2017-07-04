@@ -4,7 +4,11 @@
 
       <vheader>
         <span class="head_logo" slot="elm">ele.me</span>
-        <router-link to="/user" tag="span" class="fa fa-user-o" slot="fa-user-o"></router-link>
+        <router-link to="/login" slot="login" tag="span" class="login"
+                     v-if="isShowLogin">登陆|注册
+        </router-link>
+        <router-link to="/user" tag="span" class="fa fa-user-o"
+                     slot="fa-user-o" v-else></router-link>
       </vheader>
 
       <nav class="city_nav">
@@ -58,8 +62,16 @@
         showHome: true
       }
     },
+    mounted () {
+      // 页面刷新判断是否显示登陆注册
+      if (window.localStorage.getItem('userInfo') === null) {
+        this.$store.commit('setIsShowLogin', true)
+      } else {
+        this.$store.commit('setIsShowLogin', false)
+      }
+    },
     computed: {
-      ...mapGetters(['hotCity']),
+      ...mapGetters(['hotCity', 'isShowLogin']),
       // 获取所有城市
       group_city () {
       // 先用Objectd的内置类的keys方法获取排序对象的属性名，再利用Array原型的sort()方发进行排序

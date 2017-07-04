@@ -61,9 +61,6 @@ export const setShopDetails = (state, shopDetails) => {
 export const setShopMenu = (state, shopMenu) => {
   state.shopMenu = shopMenu
 }
-// export const setShopCartList = (state, shopCartList) => {
-//   state.shopCartList = shopCartList
-// }
 export const setFoodsList = (state, foodsList) => {
   state.foodsList = foodsList
 }
@@ -84,4 +81,10 @@ export const setCnofirmShowChildren = (state, cnofirmShowChildren) => {
 }
 export const setRemarkObj = (state, remarkObj) => {
   state.remarkObj = remarkObj
+}
+export const setShowChildrenAddress = (state, showChildrenAddress) => {
+  state.showChildrenAddress = showChildrenAddress
+}
+export const setIsShowLogin = (state, isShowLogin) => {
+  state.isShowLogin = isShowLogin
 }

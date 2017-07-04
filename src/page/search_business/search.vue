@@ -7,7 +7,7 @@
 
     <div class="search-box">
       <input type="search" class="search" placeholder="请输入商家或没美食名称" v-model="searchVal">
-      <button class="btn" @click="postKey('')">提交</button>
+      <button class="search_btn" @click="postKey()">提交</button>
     </div>
 
     <transition name="history">

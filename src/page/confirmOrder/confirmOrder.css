@@ -1,54 +1,3 @@
-@charset "utf-8";
-* {
-  box-sizing: border-box;
-}
-body {
-  font: 100px sans-serif, 'PingFang SC', "microsoft yahei", Arial, Helvetica;
-  color: #666;
-  margin: 0;
-  padding: 0;
-}
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-dl,
-dt,
-dd {
-  margin: 0;
-  padding: 0;
-  border: none;
-  list-style: none;
-}
-.lf {
-  float: left;
-}
-.rf {
-  float: right;
-}
-.clear {
-  clear: both;
-}
-a {
-  text-decoration: none;
-}
-a :hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-div:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-img {
-  vertical-align: middle;
-}
 .inb {
   display: inline-block;
 }
@@ -118,6 +67,15 @@ img {
 .br {
   border: 1px solid red;
 }
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
 .animateChildren .children-slide-enter-active {
   animation: children-slide-in 0.5s linear;
 }
@@ -172,7 +130,7 @@ img {
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address {
   flex: 9;
   color: #000;
-  font-size: .24rem;
+  font-size: .32rem;
 }
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address header,
 .confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail {

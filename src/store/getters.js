@@ -30,3 +30,5 @@ export const checkout = state => state.confirmOrderData.checkout
 export const remark = state => state.confirmOrderData.remark
 export const cnofirmShowChildren = state => state.cnofirmShowChildren
 export const remarkObj = state => state.remarkObj
+export const showChildrenAddress = state => state.showChildrenAddress
+export const isShowLogin = state => state.isShowLogin

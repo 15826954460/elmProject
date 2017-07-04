@@ -67,3 +67,12 @@
 .br {
   border: 1px solid red;
 }
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}

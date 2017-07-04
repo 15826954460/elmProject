@@ -145,6 +145,33 @@
 .br{
   border:1px solid red;
 }
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.placeHolderColor(@default:#000,@fz:12px){
+  ::-webkit-input-placeholder {
+    color:@default;
+    font-size:@fz;
+  }
+  :-moz-placeholder {
+    color:@default;
+    font-size:@fz;
+  }
+  ::-moz-placeholder {
+    color:@default;
+    font-size:@fz;
+  }
+  :-ms-input-placeholder {
+    color:@default;
+    font-size:@fz;
+  }
+}
 @default:#fff;
 @black:#000;
 @ddd:#ddd;
@@ -155,3 +182,4 @@
 @4D: #4D4D4D;
 @orange: #FF9900;
 @btn:#4CD964;
+@999:#999;

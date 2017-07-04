@@ -1,0 +1,78 @@
+@import '../../../../common/comment.less';
+
+.address_wrapper{
+  .pt(1.1rem);
+  min-height:100vh;
+  background:@f7;
+}
+.address_content{
+  font-size:.24rem;
+  background:@default;
+  .input_box{
+    .br;
+    padding:0 .2rem;
+    width:100%;
+    .flex;
+    label{
+      flex:1;
+      font-size:.32rem;
+      .pt(.2rem);
+    }
+    .input_wrapper{
+      flex:3;
+      .change_address{
+        border-bottom:1px solid @ddd;
+        line-height:1rem;
+        font-size:.32rem;
+        color:@999;
+      }
+      .six{
+       .man,.woman{
+         font-size:.32rem;
+         .inb;
+         line-height:1rem;
+          .fa-check-circle{
+            .mr(.1rem);
+            font-size:.36rem;
+          }
+         .sixActive{
+           color:@btn;
+         }
+       }
+        .man{
+          .mr(.2rem);
+        }
+      }
+      .phone_wrapper{
+        .rel;
+        .fa-plus-square{
+          font-size:.4rem;
+          color:@background;
+          .abs;
+          right:.2rem;
+          .vc;
+        }
+      }
+    }
+  }
+}
+input[type="text"]{
+  padding:.3rem 0;
+  width:100%;
+  border:none;
+  border-bottom:1px solid @ddd;
+  outline: none;
+}
+.placeHolderColor(@999,.32rem);
+
+.btn{
+  width:95%;
+  background:@btn;
+  color:@default;
+  margin:0 auto;
+  font-size:.32rem;
+  .b-r(5px);
+  .tc;
+  .mt(.4rem);
+  line-height:.8rem;
+}

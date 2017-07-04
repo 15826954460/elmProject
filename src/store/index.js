@@ -44,13 +44,14 @@ const state = {
   shopDetails: {},  // 商店详情
   shopMenu: [],  // 菜品详情
   foodsList: {}, // 规格列表
-  // shopCartList: {}, // 购物车列表
   ratingList: [], // 商品评价列表
   scores: {},
   tage: [], // 评价信息分类
-  confirmOrderData: [],
-  cnofirmShowChildren: false,
-  remarkObj: {}
+  confirmOrderData: [], // 确认订单页面的数据
+  cnofirmShowChildren: false, // 是否显示子路由
+  remarkObj: {}, // 备注
+  showChildrenAddress: false, // 是否显示子路由
+  isShowLogin: true // 显示登陆
 }
 
 export default new Vuex.Store({
