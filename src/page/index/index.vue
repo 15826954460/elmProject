@@ -108,5 +108,113 @@
   }
 </script>
 <style lang="less" scoped>
-  @import './home.css';
+  @import '../../common/comment.less';
+  @background: #3190E8;
+  @blue: #3190e8;
+  @bodyBg:#F5F5F5;
+  .homeWrapper{
+    background:@bodyBg;
+    .pt(.8rem);
+  }
+  .city_nav {
+    background: @default;
+    .city_tip {
+      height: .8rem;
+      line-height: .8rem;
+      .pl(.3rem);
+      .pr(.3rem);
+      background-color: @default;
+      border-bottom: 1px solid @ddd;
+      font-size: .24rem;
+      > span:nth-child(2) {
+        .rf;
+        .fw;
+        color: #4d4d4d;
+      }
+    }
+    .guess_city {
+      height: .8rem;
+      line-height: .8rem;
+      .pl(.3rem);
+      .pr(.3rem);
+      border-bottom: 2px solid @ddd;
+      font-size: .36rem;
+      .mb(.2rem);
+      > span {
+        color: @blue;
+      }
+      .fa-chevron-right {
+        .rf;
+        .rel;
+        top: .2rem;
+      }
+    }
+  }
+  #hot_city_container {
+    background: @default;
+    > h4 {
+      border-top: 2px solid @ddd;
+      border-bottom: 1px solid @ddd;
+      font-size: .28rem;
+      font-weight: 400;
+      height: .8rem;
+      line-height: .8rem;
+      .pl(.3rem);
+    }
+    > ul {
+      overflow: hidden;
+      li {
+        float: left;
+        .tc;
+        text-align: center;
+        height:.6rem;
+        line-height: .6rem;
+        font-size: .28rem;
+        color: @blue;
+        width: 25%;
+        border-right: 1px solid @ddd;
+        border-bottom: 1px solid @ddd;
+        &:hover{}
+        .cur;
+      }
+    }
+  }
+
+  .group_city_container{
+    overflow: hidden;
+    .letter_classify {
+      >li {
+        background: @default;
+        .mt(.2rem);
+        width:100%;
+        > .city_title {
+          border-top: 2px solid @ddd;
+          border-bottom: 1px solid @ddd;
+          font-size: .28rem;
+          font-weight: 400;
+          height: .8rem;
+          line-height: .8rem;
+          .pl(.3rem);
+        }
+        > .groupcity_name_container {
+          overflow: hidden;
+          > .ellipsis {
+            float: left;
+            .tc;
+            text-align: center;
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .28rem;
+            width: 25%;
+            border-right: 1px solid @ddd;
+            border-bottom: 1px solid @ddd;
+            .ellipsis;
+            &:hover{
+              .cur;
+            }
+          }
+        }
+      }
+    }
+  }
 </style>

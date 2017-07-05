@@ -143,6 +143,155 @@
     }
   }
 </script>
-<style lang="less">
-  @import './shoplist.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  @background: #3190E8;
+  @4D: #4D4D4D;
+  .shop_list_container {
+    background: @default;
+    .shop_header {
+      line-height: .8rem;
+      .pl(.2rem);
+      > img {
+        width: .4rem;
+      }
+      font-size: .28rem;
+      color: @4D;
+    }
+    .shop_list {
+      > li:not(:last-child) {
+        border-bottom: 1px solid @ddd;
+      }
+      > li {
+        padding: .4rem .1rem;
+        font-size: .2rem;
+        width: 100%;
+        .list_container {
+          .flex;
+          .list_left {
+            width: 15%;
+            .lf;
+            > img {
+              width: 100%;
+            }
+          }
+          .list_right {
+            flex: 1;
+            .pl(0.1rem);
+            font-size: .24rem;
+            .title {
+              .fw;
+              .mb(.2rem);
+              > h4 {
+                .inb;
+                width: 60%;
+                .ellipsis;
+              }
+              .onTime {
+                border: 1px solid @4D;
+                .b-r(2px);
+                .rf;
+                font-weight: normal;
+                padding: 2px 5px;
+                .ml(0.1rem);
+              }
+              .premium::before {
+                content: '品牌';
+                display: inline-block;
+                font-size: .24rem;
+                line-height: .24rem;
+                background-color: #ffd930;
+                padding: 0.04rem 0.1rem;
+                border-radius: 0.04rem;
+                margin-right: 0.1rem;
+                vertical-align: top;
+              }
+            }
+            .aboutSellNum {
+              .flex;
+              width: 100%;
+              .mb(.1rem);
+              font-size: .24rem;
+              height: .4rem;
+              .mouhtSell {
+                width: 55%;
+                font-size: 0;
+                .rel;
+                .level-wrapper {
+                  .abs;
+                  top: .04rem;
+                  right: 0;
+                  .level {
+                    .inb;
+                    color: @startColor;
+                    font-size: .2rem;
+                    .mr(0);
+                  }
+                  .monthSell {
+                    font-size: .24rem;
+                  }
+                }
+
+              }
+              .arriveTime {
+                .tr;
+                flex: 1;
+                > span {
+                  .inb;
+                  font-size: .2rem;
+                  padding: 1px 5px;
+                  border: 1px solid @background;
+                  .b-r(3px);
+                  .ml(.02rem);
+                }
+                > span:first-child {
+                  background: @background;
+                  color: @default;
+                }
+                > span:last-child {
+                  color: @background;
+                }
+                > span + span {
+                }
+              }
+            }
+            .distribution {
+              .flex;
+              .distribution_money, .distribution_time {
+                flex: 1;
+                .fw;
+              }
+              .distribution_time {
+                .tr;
+                .useTime {
+                  color: @background;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .noData {
+      height: .8rem;
+      line-height: .8rem;
+      color: @default;
+      background: @background;
+      .tc;
+      font-size: .32rem;
+    }
+  }
+
+  .fa.fa-arrow-circle-up {
+    font-size:.8rem;
+    .fix;
+    right: .2rem;
+    bottom: 1.6rem;
+    z-index:100;
+    color:@background;
+  }
+
+  .default {
+    display: none !important;
+  }
 </style>

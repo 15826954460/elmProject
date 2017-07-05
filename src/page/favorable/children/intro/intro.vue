@@ -67,6 +67,24 @@
     }
   }
 </script>
-<style scoped>
-  @import "intro.css";
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  .intro-wrapper {
+    .scroll_container {
+      padding:.2rem;
+      font-size:.24rem;
+      .pb(.4rem);
+      .pt(.8rem);
+      background:@default;
+      .markdown{
+        h3{
+          line-height:.6rem;
+          font-size:.32rem;
+        }
+        p,li{
+          line-height:.3rem;
+        }
+      }
+    }
+  }
 </style>

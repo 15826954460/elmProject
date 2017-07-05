@@ -175,7 +175,61 @@
     }
   }
 </script>
-<style scoped>
-  @import './menu.css';
+<style scoped lang="less">
   @import '../../../src/assets/swiper.min.css';
+  @import '../../common/comment.less';
+
+  @background: #3190E8;
+  @4D: #4D4D4D;
+  .menuWrapper {
+    .pt(0.8rem);
+    .pb(0.8rem);
+    background: @ddd;
+    .menu_nav {
+      .mb(0.2rem);
+      .swiper-box {
+        border-bottom: 2px solid @ddd;
+        height: 3.2rem;
+        background: @default;
+        .menuNav {
+          width: 100%;
+          height: 3.2rem;
+          ul {
+            width: 100%;
+            .pb(0.3rem);
+            .pt(.2rem);
+            li {
+              width: 25%;
+              .lf;
+              .pb(.2rem);
+              dl {
+                font-size: .24rem;
+                .imgWrapper {
+                  margin: 0 auto;
+                  width: 50%;
+                  img {
+                    width: 100%;
+                  }
+                }
+                .title {
+                  width: 100%;
+                  height: .4rem;
+                  line-height: .4rem;
+                  .ellipsis;
+                }
+              }
+            }
+          }
+        }
+        #pagination {
+          bottom: -0.25rem;
+          > span {
+            .inb;
+            width: .1rem;
+            height: .1rem;
+          }
+        }
+      }
+    }
+  }
 </style>

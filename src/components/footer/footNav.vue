@@ -7,7 +7,7 @@
           <dd>外卖</dd>
         </dl>
       </router-link>
-      <router-link class="item-flex" to="/search" tag="li">
+      <router-link class="item-flex" to="/searchBusiness" tag="li">
         <dl>
           <dd><i class="fa fa-search"></i></dd>
           <dd>搜索</dd>
@@ -29,11 +29,32 @@
   </div>
 </template>
 <script>
-  export default {
-    methods: {
+</script>
+<style scoped lang="less">
+  @import '../../common/comment.less';
+  @background: #3190E8;
+  @4d: #4d4d4d;
+  .foot-guide {
+    .fix;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    background: @default;
+    .flex-wrapper {
+      .flex;
+      line-height: .4rem;
+      .item-flex {
+        border-top: 2px solid @ddd;
+        .tc;
+        flex: 1;
+        font-size: 0.24rem;
+      }
+      .fa-opencart, .fa-search, .fa-reorder, .fa-user-o {
+        font-size: .3rem;
+      }
     }
   }
-</script>
-<style scoped>
-  @import './foot.css';
+  .router-link-active {
+    color: @background;
+  }
 </style>

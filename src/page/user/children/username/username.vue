@@ -53,6 +53,55 @@
     }
   }
 </script>
-<style scoped>
-  @import './username.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .username-wrapper {
+    min-height:100vh;
+    .box;
+    .pt(1rem);
+    .set-name-box{
+      width:100%;
+      .pl(.2rem);
+      .pr(.2rem);
+      font-size:0;
+      .set-name{
+        .rel;
+        height:.6rem;
+        >input{
+          .abs;
+          outline:none;
+          border:1px solid @ddd;
+          width:100%;
+          height:.6rem;
+          font-size:.32rem;
+          .pl(.2rem);
+          .b-r(5px);
+        }
+        .waring-info{
+          color:#e4393c;
+          font-size:.24rem;
+          .abs;
+          top:50%;
+          right:.2rem;
+          transform:translateY(-50%);
+        }
+      }
+      >h5{
+        font-size:.24rem;
+        font-weight:normal;
+        line-height:.6rem;
+      }
+      >button{
+        border:none;
+        line-height:.6rem;
+        background:@background;
+        color:@default;
+        width:100%;
+        font-size:.32rem;
+        .b-r(5px);
+        outline:none;
+      }
+    }
+  }
 </style>

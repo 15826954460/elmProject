@@ -143,6 +143,164 @@
     }
   }
 </script>
-<style lang="less">
-  @import './search.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  .seacrhWrapper {
+    .pt(.8rem);
+    .pb(.8rem);
+    background: #f9f9f9;
+    font-size: .28rem;
+    min-height: 100vh;
+    .search-box {
+      background: @default;
+      width: 100%;
+      padding: .2rem;
+      overflow: hidden;
+      .rel;
+      .search {
+        width: 75%;
+        height: .5rem;
+        outline: none;
+        border: 1px solid @ddd;
+        padding: .2rem;
+        font-size: .28rem;
+        .b-r(5px);
+        .fw;
+        .lf;
+        background: @f7;
+      }
+      .search_btn {
+        .abs;
+        right:.2rem;
+        .vc;
+        color: @default;
+        font-size: .32rem;
+        border: none;
+        background: @background;
+        .b-r(5px);
+        width: 20%;
+        height: .5rem;
+        outline:none;
+      }
+    }
+    .searchHistory {
+      > h3 {
+        line-height: .5rem;
+        color: @4D;
+        .fw;
+        .pl(.3rem);
+        background: @f7;
+        font-size: .28rem;
+      }
+      > h4 {
+        line-height: .8rem;
+        .tc;
+        color: @background;
+        font-size:.32rem;
+        background: @default;
+        border-top: 2px solid @ddd;
+      }
+      > ul {
+        >li+li{
+          border-top:1px solid @ddd;
+        }
+        li {
+          padding: .2rem;
+          background: @default;
+          .rel;
+          .searchContent {
+            .inb;
+            width:100%;
+          }
+          .fa-remove {
+            .vc;
+            right: .3rem;
+            &:hover {
+              .cur;
+            }
+          }
+        }
+      }
+    }
+    .business-box {
+      > h3 {
+        line-height: .7rem;
+        background: #f7f7f7;
+        .pl(.3rem);
+      }
+      .list_container {
+        .list_li:not(:last-child) {
+          border-bottom: 1px solid @ddd;
+        }
+        .list_li {
+          .flex;
+          font-size: .24rem;
+          width:100%;
+          padding: .2rem;
+          background: @default;
+          .left-img {
+            width:15%;
+            .tc;
+            > img {
+              width: 80%;
+            }
+          }
+          .right-content {
+            flex: 1;
+            .pl(.2rem);
+            > h4 {
+              font-weight: normal;
+              > img {
+                width: .5rem;
+                .ml(0.1rem);
+                vertical-align: middle;
+                .rel;
+                top: -0.04rem;
+              }
+            }
+            > h4, p {
+              line-height: .4rem;
+            }
+            > p {
+              width: 100%;
+              .iconName {
+                .fw;
+                padding: 2px;
+                color: @default;
+                .b-r(.06rem);
+              }
+              .only_phone {
+                color: @payMoney;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .history-enter-active {
+    animation: history-in 2s;
+  }
+
+  @keyframes history-in {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  .business-enter-active {
+    animation: business-in 2s;
+  }
+  @keyframes business-in {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
 </style>

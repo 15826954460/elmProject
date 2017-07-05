@@ -86,12 +86,92 @@
         }, 1000)
       },
       goToOrderDetail () { // 条转到详情页
-        console.log(999999)
         this.$router.push({path: '/order'})
       }
     }
   }
 </script>
-<style scoped>
-  @import './pay.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  @import '../../common/headerComment.less';
+  .pay-wrapper {
+    .box;
+    font-size: 0;
+    min-height: 100vh;
+    background: @f7;
+    .pay_time {
+      font-size: .24rem;
+      background: @default;
+      .tc;
+      .pt(.6rem);
+      .pb(.3rem);
+      .remaining_time {
+        font-size: .6rem;
+        line-height: .8rem;
+      }
+      .intro {
+        .pl(.2rem);
+        .pr(.2rem);
+        .flex;
+        span {
+          flex: 1;
+          text-align: left;
+          font-size: .28rem;
+        }
+        span + span {
+          .tr;
+          .fw;
+          color: @org;
+        }
+      }
+    }
+    .change_pay_type {
+      font-size: .28rem;
+      .pl(.2rem);
+      line-height: .6rem;
+    }
+    > ul {
+      .pay_type_wrapper {
+        background: @default;
+        padding: .2rem;
+        font-size: 0;
+        .flex;
+        .at;
+        .pay_logo {
+          flex: 2;
+          img {
+            width: 100%;
+          }
+        }
+        .pay_ch {
+          flex: 7;
+          font-size: .32rem;
+          .pl(.1rem);
+        }
+        .select_pay_type {
+          flex: 1;
+          color: @ddd;
+          font-size: .6rem;
+        }
+        .select {
+          color: @button;
+        }
+      }
+      .pay_type_wrapper:first-child{
+        border-bottom:1px solid @ddd;
+      }
+    }
+    .pay_btn {
+      border: none;
+      width: 90%;
+      margin: 0 auto;
+      background: @button;
+      line-height: .6rem;
+      .b-r(5px);
+      color: @default;
+      font-size: .36rem;
+      .tc;
+      .mt(.3rem);
+    }
+  }
 </style>

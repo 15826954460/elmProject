@@ -112,6 +112,200 @@
     }
   }
 </script>
-<style scoped>
-  @import 'info.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .info-wrapper {
+    .box;
+    .user-info-wrapper {
+      .comment {
+        .flex;
+        .pl(.3rem);
+        .pr(.3rem);
+        font-size: .28rem;
+        height: 1.6rem;
+        line-height: 1.4rem;
+        background: @default;
+        border-top: 1px solid @ddd;
+        .rel;
+        .flex-content {
+          width: 70%;
+        }
+        .flex-img {
+          flex: 1;
+          .rel;
+          .fa-user-circle-o {
+            font-size: 1.2rem;
+            color: @ddd;
+            .abs;
+            top: 50%;
+            left: 50%;
+            .trsl();
+          }
+        }
+        .fa-angle-right {
+          font-size: .6rem;
+          .abs;
+          .vc;
+          right: .2rem;
+          color: @ddd;
+        }
+      }
+      .file {
+        .rel;
+        #file {
+          .abs;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+      }
+      .self-height {
+        height: .8rem;
+        line-height: .8rem;
+      }
+      > h5 {
+        line-height: .8rem;
+        font-weight: normal;
+        font-size: .28rem;
+        .pl(.3rem);
+        border-top: 1px solid @ddd;
+      }
+      .phone {
+        .icon-phone {
+          width: 6%;
+          .mr(.2rem);
+          > img {
+            width: 100%;
+          }
+        }
+        .phone-content {
+          flex: 1;
+        }
+      }
+      .secret {
+        border-bottom: 1px solid @ddd;
+        .loging-secret {
+          width: 20%;
+        }
+        .refactor {
+          width: 75%;
+          .tr;
+        }
+      }
+      .out-loging {
+        border: none;
+        background: @outloging;
+        .b-r(5px);
+        color: @default;
+        width: 95%;
+        line-height: .6rem;
+        font-size: .28rem;
+        margin: 0 auto;
+        .tc;
+        .mt(.6rem);
+      }
+    }
+    .alert, .warning-phone-info, .log-out-wrapper {
+      width: 80%;
+      .abs;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      background: @default;
+      .b-r(10px);
+      .trsl();
+      font-size: .32rem;
+      .warning {
+        .tc;
+        .pt(.4rem);
+        .fa-warning {
+          font-size: 1.2rem;
+          color: #F8CB86;
+        }
+      }
+      .text {
+        .tc;
+        line-height: .8rem;
+      }
+      .sure {
+        border: none;
+        background: #4CD964;
+        font-size: .36rem;
+        color: @default;
+        width: 100%;
+        line-height: .6rem;
+        .fw;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+    .log-out-wrapper {
+      .change-box {
+        .flex;
+        .pl(.6rem);
+        .pr(.6rem);
+        .pb(.4rem);
+        > span {
+          flex: 1;
+          .tc;
+          color: @default;
+          padding: .1rem .2rem;
+          .b-r(5px);
+        }
+        .waiting {
+          background: @ddd;
+          .mr(.4rem);
+        }
+        .out {
+          background: @outloging;
+        }
+      }
+    }
+  }
+
+  .warning-box-enter-active {
+    animation: warning-box-in .3s linear
+  }
+
+  .warning-box-leave-active {
+    animation: warning-box-out .3s linear
+  }
+
+  @keyframes warning-box-in {
+    0% {
+      transform: translate(-50%, -200%)
+    }
+    100% {
+      transform: translate(-50%, -50%)
+    }
+  }
+
+  @keyframes warning-box-out {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.1);
+      opacity: 0;
+    }
+  }
+
+  .log-out-wrapper-enter-active {
+    animation: log-out-wrapper-in linear .3s;
+  }
+
+  @keyframes log-out-wrapper-in {
+    0% {
+      transform: translate(-50%, -60%) scale(0.5)
+    }
+    50% {
+      transform: translate(-50%, -40%) scale(1.2)
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1)
+    }
+  }
 </style>

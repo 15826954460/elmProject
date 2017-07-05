@@ -76,6 +76,68 @@
     }
   }
 </script>
-<style scoped>
-  @import './prize.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  .prize-wrapper {
+    .pt(.8rem);
+    min-height: 100vh;
+    background: @f7;
+    .activity_banner {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .invite_firend {
+      .flex;
+      font-size: .24rem;
+      .invite_firend_style {
+        flex: 1;
+        .tc;
+        .pt(.3rem);
+        .pb(.3rem);
+        background: @default;
+        img {
+          width: .8rem;
+        }
+        p {
+          line-height: .4rem;
+        }
+      }
+    }
+    .invite_num {
+      .flex;
+      .pt(.4rem);
+      .pb(.4rem);
+      .invite_num_style {
+        flex: 1;
+        .tc;
+        font-size: .24rem;
+        span {
+          color: red;
+          .fw;
+          font-size: .4rem;
+        }
+      }
+      .invite_people {
+        border-left: 1px solid @ddd;
+      }
+    }
+    .income_detail {
+      font-size: .24rem;
+      .tc;
+    }
+    .incom_tips {
+      .tc;
+      font-size: .24rem;
+      .mt(.3rem);
+      img {
+        width: .6rem;
+      }
+      p {
+        line-height: .4rem;
+        .tc;
+      }
+    }
+  }
 </style>

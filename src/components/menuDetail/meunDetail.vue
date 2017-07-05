@@ -39,6 +39,33 @@
     }
   }
 </script>
-<style scoped>
-  @import './menuDetail.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  .menu_detail_wrapper {
+    .pt(.8rem);
+    width: 100%;
+    .content_wrapper {
+      img {
+        width: 100%;
+      }
+      .content {
+        padding: .2rem;
+        div {
+          h3 {
+            line-height: .5rem;
+          }
+          p {
+            line-height:.4rem;
+            .sale_pay {
+              color: @org;
+              .ml(.2rem);
+            }
+            .good_appraise {
+              .ml(.2rem);
+            }
+          }
+        }
+      }
+    }
+  }
 </style>

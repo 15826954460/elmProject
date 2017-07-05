@@ -29,6 +29,25 @@
     }
   }
 </script>
-<style scoped>
-  @import './shophistory.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .shop-history {
+    .box;
+    .rel;
+    min-height:100vh;
+    .no-shopping{
+      .abs;
+      top:50%;
+      left:50%;
+      .trsl();
+      font-size:.28rem;
+      .tc;
+      width:100%;
+      height:3rem;
+      img{
+        height:2rem;
+      }
+    }
+  }
 </style>

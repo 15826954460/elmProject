@@ -88,6 +88,70 @@
   }
 </script>
 
-<style scoped>
-  @import './points.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  @import '../../common/headerComment.less';
+  @import '../../common/animate.less';
+
+  .points_box {
+    .points-wrapper {
+      .box;
+      min-height: 100vh;
+      font-size: .24rem;
+      width: 100%;
+      .content_container {
+        padding: 0 .2rem .2rem .2rem;
+        background: @background;
+        .content {
+          background: @default;
+          .b-r(.4px);
+          padding: .2rem;
+          .content_header {
+            .flex;
+            .content_title_style {
+              flex: 3;
+            }
+            .contetn_description {
+              flex: 2;
+              .tr;
+              img {
+                width: .2rem;
+                .rel;
+                top: -0.04rem;
+              }
+            }
+          }
+          .content_num {
+            color: @4D;
+            .mb(.2rem);
+            .strong_num {
+              font-size: .6rem;
+            }
+          }
+          .promit_button {
+            background: @org;
+            color: @default;
+            font-size: .32rem;
+            line-height: .6rem;
+            .tc;
+            .b-r(3px);
+          }
+        }
+      }
+      .deal_detail {
+        padding: .3rem;
+      }
+      .no_log {
+        .tc;
+        img {
+          width: 3rem;
+        }
+        p {
+          line-height: .4rem;
+        }
+      }
+    }
+    .animateChildren;
+    .animateParent;
+  }
 </style>

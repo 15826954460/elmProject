@@ -18,6 +18,29 @@
     }
   }
 </script>
-<style scoped>
-  @import './integral.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  .integral-wrapper {
+    min-height: 100vh;
+    .rel;
+    font-size:0;
+    .integral-content{
+      .tc;
+      .abs;
+      top:50%;
+      left:50%;
+      .trsl();
+      >h2{
+        font-size:.4rem;
+        color:@background;
+      }
+      >p{
+        font-size:.28rem;
+        line-height:.8rem;
+      }
+      >img{
+        width:2rem;
+      }
+    }
+  }
 </style>

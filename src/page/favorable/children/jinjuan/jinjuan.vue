@@ -38,6 +38,22 @@
     }
   }
 </script>
-<style scoped>
-  @import './jinjuan.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  .jinjuan-wrapper{
+    font-size:.24rem;
+    .pb(.4rem);
+    .pt(.8rem);
+    background:@default;
+    .markdown{
+      padding:.2rem;
+      h3{
+        line-height:.6rem;
+        font-size:.32rem;
+      }
+      p,li{
+        line-height:.3rem;
+      }
+    }
+  }
 </style>

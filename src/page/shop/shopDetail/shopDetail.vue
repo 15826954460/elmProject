@@ -121,6 +121,142 @@
     }
   }
 </script>
-<style scoped>
-  @import './shopDetail.css';
+<style lang="less" scoped>
+  @import '../../../common/comment.less';
+  @import '../../../common/headerComment.less';
+  @import '../../../common/animate.less';
+  .shop-detail {
+    min-height: 100vh;
+    background: @f7;
+    .pt(1rem);
+    .activities_container {
+      background: @default;
+      header {
+        font-size: .36rem;
+        line-height:.7rem;
+        .pl(1rem);
+        border-bottom: 1px solid @ddd;
+      }
+      .actibities_ul {
+        li {
+          font-size: .24rem;
+          .pt(.1rem);
+          .pl(.2rem);
+          .pr(.2rem);
+          line-height: .5rem;
+          .icon_name {
+            color: @default;
+            padding: 2px;
+            .b-r(3px);
+            .mr(5px);
+          }
+          .icon_color {
+            color: @default;
+            padding: 2px;
+            .b-r(2px);
+          }
+        }
+      }
+    }
+    .shop_status_container {
+      .mt(.2rem);
+      background: @default;
+      font-size: .24rem;
+      .shop_status_header {
+        .inb;
+        width: 100%;
+        height: .8rem;
+        line-height: .8rem;
+        color: @4D;
+        font-size: .36rem;
+        border-bottom: 1px solid @ddd;
+        .shop_detail_title {
+          .ml(.2rem);
+        }
+        .identification_detail_wrapper {
+          .rf;
+          color: #999;
+          .pr(.2rem);
+          .fa-angle-right {
+            font-size: .4rem;
+          }
+        }
+      }
+      .shop_statu_detail {
+        .flex;
+        height: 1.4rem;
+        align-items: center;
+        .fa-smile-o-wrapper {
+          flex: 1;
+          .tc;
+          .fa-smile-o {
+            font-size: 1rem;
+            color: #7ED321;
+          }
+        }
+        .check_date {
+          flex: 4;
+          p {
+            line-height: .4rem;
+            .shop_status_well {
+              color: #7ED321;
+            }
+          }
+        }
+      }
+    }
+    .shop_status_info {
+      .mt(.2rem);
+      background: @default;
+      line-height: .7rem;
+      font-size: .24rem;
+      header {
+        font-size: .36rem;
+        .pl(.2rem);
+        .pr(.2rem);
+        border-bottom: 1px solid @ddd;
+      }
+      p {
+        .pl(.2rem);
+        height: .7rem;
+        border-bottom: 1px solid @ddd;
+        font-size: .28rem;
+        .rel;
+        .fa-angle-right {
+          .abs;
+          .vc;
+          right: .1rem;
+          font-size: .4rem;
+        }
+      }
+    }
+    .license_container {
+      .fix;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.3);
+      img{
+        width:100%;
+        height:80%;
+        .abs;
+        top:10%;
+      }
+    }
+    .animateChildren;
+    .animateParent;
+  }
+  .fade-enter-active {
+    animation: fade-slide-in .5s linear;
+  }
+  @keyframes fade-slide-in {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
 </style>

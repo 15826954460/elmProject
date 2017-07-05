@@ -72,6 +72,55 @@
     }
   }
 </script>
-<style scoped>
-  @import './edit.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .address-wrapper{
+    height:100vh;
+    width:100%;
+    .box;
+    .pt(1rem);
+    .address-list{
+      font-size:.24rem;
+      color:@4D;
+      background:@default;
+      li:first-child{
+        border-top:1px solid @ddd;
+      }
+      .active{
+        background:#FAF7D8;
+      }
+      li{
+        padding:.2rem .3rem;
+        .rel;
+        border-bottom:1px solid @ddd;
+        dd{
+          line-height:.4rem;
+        }
+        .fa-remove{
+          .abs;
+          .vc;
+          right:.3rem;
+        }
+      }
+    }
+    >h5{
+      font-size:.28rem;
+      font-weight:normal;
+      line-height:.8rem;
+      background:@default;
+      .mt(.2rem);
+      .pl(.3rem);
+      .flex;
+      .rel;
+      border-top:1px solid @ddd;
+      border-bottom:1px solid @ddd;
+      .fa-angle-right{
+        font-size:.6rem;
+        .abs;
+        .vc;
+        right:.3rem;
+      }
+    }
+  }
 </style>

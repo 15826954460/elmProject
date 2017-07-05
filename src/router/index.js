@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/page/home/home'
+import index from '@/page/index/index'
 import city from '@/page/city/city'
 import menu from '@/page/menu/menu'
-import search from '@/page/search_business/search'
+import searchBusiness from '@/page/search_business/search'
 import order from '@/page/order/order'
 import detail from '@/page/order/children/detail'
 import user from '@/page/user/user'
@@ -50,11 +50,7 @@ export default new Router({
     // 首页城市列表
     {
       path: '/',
-      component: home
-    },
-    {
-      path: '/home',
-      component: home
+      component: index
     },
     // 当前选择城市页
     {
@@ -68,8 +64,8 @@ export default new Router({
     },
     // 搜索页
     {
-      path: '/search',
-      component: search
+      path: '/searchBusiness',
+      component: searchBusiness
     },
     // 订单页
     {

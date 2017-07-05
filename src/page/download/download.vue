@@ -65,6 +65,39 @@
     }
   }
 </script>
-<style scoped>
-  @import './downLoad.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  @import '../../common/headerComment.less';
+  .downLoad-wrapper {
+    .box;
+    .rel;
+    min-height: 100vh;
+    .downLoad-content-wrapper {
+      padding: .4rem .4rem;
+      font-size:0;
+      .rel;
+      .img-wrapper {
+        .tc;
+        img {
+          .b-r(15px);
+          width: 2.6rem;
+        }
+      }
+      .down-text {
+        font-size: .4rem;
+        .tc;
+        line-height: .8rem;
+      }
+      .download-btn {
+        width: 100%;
+        background: @button;
+        border: none;
+        color: @default;
+        line-height: .5rem;
+        font-size: .36rem;
+        .b-r(5px);
+        outline:none;
+      }
+    }
+  }
 </style>

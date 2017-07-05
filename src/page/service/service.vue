@@ -76,6 +76,61 @@
     }
   }
 </script>
-<style scoped>
-  @import './service.css';
+<style lang="less" scoped>
+  @import '../../common/comment.less';
+  @import '../../common/headerComment.less';
+  @import '../../common/animate.less';
+  .service-wrapper {
+    .box;
+    min-height:100vh;
+    overflow: hidden;
+    .service_connect {
+      font-size:.24rem;
+      .flex;
+      li {
+        flex: 1;
+        background: @default;
+        .pt(.2rem);
+        .pb(.2rem);
+        .tc;
+        dl {
+          dd {
+            line-height: .5rem;
+          }
+        }
+      }
+      .service_left {
+        border-right: 1px solid @f7;
+      }
+    }
+    .hot_questions {
+      .qustion_header {
+        font-size: .32rem;
+        line-height: .8rem;
+        .pl(.3rem);
+        background: @default;
+        border-top: 1px solid @f7;
+        border-bottom: 1px solid @f7;
+      }
+      ul {
+        li {
+          .pl(.3rem);
+          .pr(.3rem);
+          font-size: .32rem;
+          line-height: .7rem;
+          background: @default;
+          border-bottom: 1px solid @f7;
+          .rel;
+          .fa-angle-right {
+            font-size: .5rem;
+            .abs;
+            .vc;
+            right: .3rem;
+          }
+        }
+      }
+    }
+    .animateChildren;
+    .animateParent;
+  }
 </style>

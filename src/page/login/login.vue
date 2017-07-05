@@ -5,12 +5,14 @@
     </vhead>
     <div class="login_box">
       <div class="user_name_input input_box">
-        <input type="text" placeholder="账号" v-model="inputzh" @input="enterAccount" maxlength="16">
+        <input type="text" placeholder="账号"
+               v-model="inputzh"
+               @input="enterAccount" maxlength="16">
       </div>
       <div class="user_pwd_input input_box">
         <input type="text" placeholder="密码"
                v-show="showInputText" maxlength="16"
-               v-model="inputtext" @input="enterPwd">
+               v-model="inputpwd" @input="enterPwd">
         <input type="password" placeholder="密码" maxlength="16"
                v-show="!showInputText"
                v-model="inputpwd" @input="enterPwd">
@@ -55,7 +57,7 @@
         this.showPwd = !this.showPwd
         if (this.showPwd === false) {
           this.showInputText = true
-          this.inputtext = this.inputpwd
+//          this.inputtext = this.inputpwd
         } else {
           this.showInputText = false
         }
@@ -88,5 +90,97 @@
   }
 </script>
 <style lang="less" scoped>
-  @import 'login.css';
+  @import '../../common/comment.less';
+  @f7: #f7f7f7;
+  .login_wrapper {
+    min-height: 100vh;
+    background: @f7;
+    font-size: 0;
+    .pt(1.2rem);
+    .login_box {
+      .input_box {
+        padding: 0.2rem 0.4rem;
+        background: @default;
+        font-size: 0;
+        line-height: 1rem;
+        .flex;
+        >input {
+          font-size: 14px;
+          border: none;
+          outline: none;
+        }
+      }
+      .user_pwd_input {
+        border-top: 1px solid @ddd;
+        border-bottom: 1px solid @ddd;
+        .rel;
+        .background {
+          background: @btn;
+        }
+        .ctrl_btn {
+          .abs;
+          .vc;
+          border: 1px solid #ddd;
+          height: .4rem;
+          width: 1.2rem;
+          .b-r(.2rem);
+          right: .2rem;
+          .show_pwd {
+            font-size: 20px;
+            width: 100%;
+            height: .35rem;
+            line-height: .35rem;
+            .rel;
+            top: -.1rem;
+            .pl(.2rem);
+          }
+          .show_abc {
+            font-size: 12px;
+            width: 100%;
+            height: .35rem;
+            line-height: .35rem;
+            .pl(.2rem);
+          }
+          .round_doct {
+            width: .5rem;
+            height: .5rem;
+            background: @ddd;
+            .b-r(50%);
+            .abs;
+            top: -0.08rem;
+          }
+          .pwd {
+            left: -0.1rem;
+          }
+          .abc {
+            right: -0.1rem;
+          }
+        }
+      }
+    }
+    .warm_prompt {
+      color: red;
+      .pl(10px);
+      font-size: 12px;
+      line-height: .6rem;
+    }
+    .login_btn {
+      width: 95%;
+      color: @default;
+      background: @btn;
+      font-size: 16px;
+      .tc;
+      margin: 0 auto;
+      .b-r(5px);
+      line-height: .8rem;
+    }
+    .reset_pwd {
+      color: @background;
+      font-size: 14px;
+      .mt(.4rem);
+      .tr;
+      .pr(.2rem);
+    }
+  }
+
 </style>

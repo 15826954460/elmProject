@@ -120,6 +120,66 @@
     }
   }
 </script>
-<style scoped>
-  @import './shopSafe.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  @import '../../../../common/animate.less';
+  .shop_safe_wrapper{
+    .pt(.8rem);
+    min-height:100vh;
+    background:@f7;
+    .scroll_container{
+      font-size:.24rem;
+      .shop_status_container{
+        background:@default;
+        header{
+          line-height:.7rem;
+          font-size:.36rem;
+          border-bottom:1px solid @ddd;
+          .pl(.2rem);
+        }
+        .shop_statu_detail {
+          .flex;
+          height: 1.4rem;
+          align-items: center;
+          .fa-smile-o-wrapper {
+            flex: 1;
+            .tc;
+            .fa-smile-o {
+              font-size: 1rem;
+              color: #7ED321;
+            }
+          }
+          .check_date {
+            flex: 4;
+            p {
+              line-height: .4rem;
+              .shop_status_well {
+                color: #7ED321;
+              }
+            }
+          }
+        }
+      }
+      .shop_status_container{
+        .mt(.2rem);
+        ul{
+          .pl(.3rem);
+          li{
+            padding:.1rem 0;
+            p{
+              line-height:.4rem;
+            }
+          }
+        }
+        .img_container{
+          width:100%;
+          img{
+            width:100%;
+            height:4rem;
+          }
+        }
+      }
+    }
+  }
 </style>

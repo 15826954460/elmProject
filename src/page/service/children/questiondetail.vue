@@ -43,6 +43,19 @@
     }
   }
 </script>
-<style scoped>
-  @import './questiondetail.css';
+<style lang="less" scoped>
+  @import '../../../common/comment.less';
+  @import '../../../common/headerComment.less';
+  .question_detail_wrapper{
+    .box;
+    min-height:100vh;
+    .content-wrapper{
+      font-size:.24rem;
+      padding:.2rem .3rem;
+      h2,p{
+        line-height:.4rem;
+      }
+    }
+  }
+
 </style>

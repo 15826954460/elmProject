@@ -26,7 +26,6 @@ export const scores = state => state.scores
 export const tage = state => state.tage
 export const addAddress = state => state.confirmOrderData.addAddress
 export const searchAddress = state => state.confirmOrderData.searchAddress
-// export const addressList = state => state.confirmOrderData.addressList
 export const checkout = state => state.confirmOrderData.checkout
 export const remark = state => state.confirmOrderData.remark
 export const cnofirmShowChildren = state => state.cnofirmShowChildren

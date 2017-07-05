@@ -92,6 +92,62 @@
     }
   }
 </script>
-<style scoped>
-  @import './exchangevip.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .exchangevip-wrapper{
+    background:@f7;
+    min-height:100vh;
+    width:100%;
+    .box;
+    font-size:0;
+    .rel;
+    .buy_for{
+      font-size:.28rem;
+      .pl(.3rem);
+      line-height:.8rem;
+    }
+    .input-comment{
+      width:100%;
+      background:@default;
+      height:.7rem;
+      .pl(.2rem);
+      font-size:.28rem;
+      border:none;
+      outline: none;
+    }
+    .determine{
+      width:90%;
+      margin:0 auto;
+      font-size:.32rem;
+      color:@default;
+      background:@ddd;
+      .tc;
+      line-height:.6rem;
+      .b-r(5px);
+      .fw;
+      .mb(.4rem);
+    }
+    .could_pay{
+      background:@button;
+    }
+    .style_input{
+      .mb(.3rem);
+      border-top:1px solid #ddd;
+    }
+    .Binding{
+      h3{
+        .tc;
+        font-size:.36rem;
+        font-weight:normal;
+        .mb(.2rem);
+      }
+    }
+    .comment-sweet{
+      width:80%;
+      font-size:.2rem;
+      margin:0 auto;
+      line-height:.4rem;
+    }
+  }
 </style>

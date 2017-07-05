@@ -141,6 +141,58 @@
     }
   }
 </script>
-<style scoped>
-  @import './add.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .add-wrapper{
+    min-height:100vh;
+    .box;
+    font-size:0;
+    .add-info-box{
+      padding:.3rem;
+      background:@default;
+      .com{
+        min-height:.7rem;
+        font-size:0;
+        .rel;
+        >input{
+          background:#F2F2F2;
+          width:100%;
+          height:.6rem;
+          outline:none;
+          border:1px solid @ddd;
+          .b-r(5px);
+          font-size:.28rem;
+          .pl(.2rem);
+        }
+        >.waringBorder{
+          border:1px solid #EA3106;
+        }
+        >span{
+          .inb;
+          font-size:.24rem;
+          color:#EA3106;
+          width:100%;
+          .mt(.2rem);
+        }
+      }
+      .com:not(:last-child){
+        .mb(.2rem);
+      }
+    }
+    .btn-wrapper{
+      .pl(.3rem);
+      .pr(.3rem);
+      .add-address-btn{
+        line-height:.6rem;
+        background:#4CD964;
+        color:@default;
+        font-size:.32rem;
+        border:none;
+        outline: none;
+        width:100%;
+        .b-r(5px);
+      }
+    }
+  }
 </style>

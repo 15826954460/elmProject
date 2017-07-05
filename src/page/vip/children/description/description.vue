@@ -54,6 +54,60 @@
     }
   }
 </script>
-<style scoped>
-  @import './description.css';
+<style lang="less" scoped>
+  @import '../../../../common/comment.less';
+  @import '../../../../common/headerComment.less';
+  .description-wrapper {
+    .box;
+    .pt(1rem);
+    background:@default;
+    .markdown {
+      padding: .2rem;
+      background: @default;
+      .pb(1rem);
+      p{
+        padding:0 .8rem;
+        font-size:.28rem;
+        line-height:.4rem;
+      }
+      >h3{
+        font-size:.32rem;
+        .mt(.2rem);
+        .mb(.2rem);
+      }
+      >ul{
+        >li{
+          font-size:.28rem;
+        }
+      }
+    }
+  }
+
+  .vip-slide-enter-active {
+    animation: vip-slide-in 0.5s linear;
+  }
+
+  @keyframes vip-slide-in {
+    0% {
+      transform: translateX(100%);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .vip-wrapper-slide-enter-active {
+    animation: vip-wrapper-slide-in 1s linear;
+  }
+
+  @keyframes vip-wrapper-slide-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>

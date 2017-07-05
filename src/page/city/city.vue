@@ -69,6 +69,87 @@
     }
   }
 </script>
-<style lang='less'>
-  @import './city.css';
+<style lang='less' scoped>
+  @import '../../common/comment.less';
+  @bodyBg:#F5F5F5;
+  @background: #3190E8;
+  .city_container{
+    background:@bodyBg;
+    .pt(1rem);
+    min-height:100vh;
+    .city_form{
+      background:@default;
+      padding:.2rem .4rem;
+      border-top:1px solid @ddd;
+      border-bottom:1px solid @ddd;
+      .input_wrapper{
+        width:100%;
+        height:.6rem;
+        .rel;
+        .mb(.4rem);
+        .city_input{
+          width:100%;
+          height:.6rem;
+          .b-r(0.06rem);
+          padding:.2rem;
+          font-size:.3rem;
+          outline: none;
+          background-color:transparent;
+          border:1px solid #999;
+          .abs;
+        }
+      }
+      .submit_wrapper{
+        height:.6rem;
+        .rel;
+        .city_submit{
+          border:none;
+          width:100%;
+          .b-r(0.06rem);
+          background:@background;
+          height:.6rem;
+          color:@default;
+          font-size:.3rem;
+          .abs;
+          outline: none;
+        }
+      }
+    }
+    .pois_search_history{
+      font-size:.24rem;
+      .pl(.3rem);
+      height:.5rem;
+      line-height:.5rem;
+      font-weight:normal;
+    }
+    .getpois_ul{
+      background:@default;
+      border-top:1px solid @ddd;
+      border-bottom:1px solid @ddd;
+      >li{
+        padding:.3rem .4rem;
+        >.pois_name{
+          color:@black;
+          font-size:.28rem;
+          .mb(.2rem);
+          font-weight:400;
+          .ellipsis;
+        }
+        >.pois_address{
+          font-size:.24rem;
+          color:#9F9F9C;
+          .ellipsis;
+        }
+      }
+      >li+li{
+        border-top:1px solid @ddd;
+      }
+    }
+    .search_none_place{
+      background:@default;
+      font-size:.32rem;
+      .tc;
+      line-height:1rem;
+    }
+  }
 </style>
