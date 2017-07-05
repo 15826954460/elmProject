@@ -78,7 +78,7 @@
           this.showAlert = true
         } else {
           let userInfo = {}
-          this.$router.push({path: '/confirmOrder'})
+          this.$router.go(-1)
           userInfo.userName = this.inputzh
           userInfo.pwd = this.inputpwd
           window.localStorage.setItem('userInfo', JSON.stringify(userInfo))

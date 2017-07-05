@@ -2,13 +2,13 @@
   <div class="pay-wrapper">
 
     <vheader message="在线支付">
-      <router-link to="/vip" class="fa fa-angle-left" tag="header" slot="angle"></router-link>
+      <span @click="$router.go(-1)" class="fa fa-angle-left"  slot="angle"></span>
     </vheader>
 
     <div class="pay_time">
       <p class="warning_info">支付剩余时间</p>
       <h2 class="remaining_time"><span>00</span> : <span class="minutes" id="minutes">00</span> : <span class="seconds" id="seconds">59</span></h2>
-      <p class="intro"><span>详情</span><span>￥20.00</span></p>
+      <p class="intro"><span @click="goToOrderDetail">详情</span><span>￥425</span></p>
     </div>
     <h3 class="change_pay_type">选择支付方式</h3>
     <ul class="pay_type_box">
@@ -68,7 +68,7 @@
       },
       pay () {
         this.isOverTime = true  // 显示弹框
-        this.alertText = '当前环境无法打开，请打开官方APP进行付款'
+        this.alertText = '当前支付环境无法打开，请打开官方APP进行付款'
       },
       autoAlert () {
         let seconds = document.getElementById('seconds')
@@ -84,6 +84,10 @@
             clearInterval(this.timer) // 清楚定时器
           }
         }, 1000)
+      },
+      goToOrderDetail () { // 条转到详情页
+        console.log(999999)
+        this.$router.push({path: '/order'})
       }
     }
   }

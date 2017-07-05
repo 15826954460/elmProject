@@ -28,7 +28,7 @@ const state = {
     'pointNumber': 0
   },
   add_detail: [], // 地址详情
-  address: {  // 地址
+  address: {
     'address': [
       {address: '上海马戏团', phone: 15896451235},
       {address: '华盛达大厦', phone: 15896451235},
@@ -51,7 +51,13 @@ const state = {
   cnofirmShowChildren: false, // 是否显示子路由
   remarkObj: {}, // 备注
   showChildrenAddress: false, // 是否显示子路由
-  isShowLogin: true // 显示登陆
+  isShowLogin: true, // 显示登陆
+  isShowAddAddress: false,
+  addressList: {
+    list: []
+  }, // 地址列表
+  changeAddress: '', // 用户选择的地址
+  negativeCheckedAddress: '' // 用户当前选则的地址
 }
 
 export default new Vuex.Store({

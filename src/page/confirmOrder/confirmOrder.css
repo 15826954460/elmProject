@@ -122,33 +122,29 @@
 }
 .confirm_box .confirm_order_wrapper .address_empty_left .map_wrapper {
   flex: 1;
-  position: relative;
 }
 .confirm_box .confirm_order_wrapper .address_empty_left .map_wrapper .fa-map-marker {
   font-size: .4rem;
 }
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address {
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address {
+  padding-top: 0px;
   flex: 9;
   color: #000;
   font-size: .32rem;
 }
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address header,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail {
-  line-height: .4rem;
-}
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address header span,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail span {
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address header span,
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address .address_detail span {
   font-size: 0.24rem;
 }
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .family_name,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .family_name {
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address header .family_name,
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address .address_detail .family_name {
   font-weight: bold;
   font-size: .3rem;
 }
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .sex,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .sex,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address header .home,
-.confirm_box .confirm_order_wrapper .address_empty_left .add_address .address_detail .home {
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address header .sex,
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address .address_detail .sex,
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address header .home,
+.confirm_box .confirm_order_wrapper .address_empty_left > .add_address .address_detail .home {
   margin-right: 0.2rem;
 }
 .confirm_box .confirm_order_wrapper .address_empty_left .fa-angle-right {

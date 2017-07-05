@@ -88,3 +88,15 @@ export const setShowChildrenAddress = (state, showChildrenAddress) => {
 export const setIsShowLogin = (state, isShowLogin) => {
   state.isShowLogin = isShowLogin
 }
+export const setIsShowAddAddress = (state, isShowAddAddress) => {
+  state.isShowAddAddress = isShowAddAddress
+}
+export const setAddressList = (state, addressList) => {
+  state.addressList = addressList
+}
+export const setChangeAddress = (state, changeAddress) => {
+  state.changeAddress = changeAddress
+}
+export const setNegativeCheckedAddress = (state, negativeCheckedAddress) => {
+  state.negativeCheckedAddress = negativeCheckedAddress
+}

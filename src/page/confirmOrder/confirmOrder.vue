@@ -14,16 +14,19 @@
         <div>
           <div class="address_empty_left">
             <div class="map_wrapper"><span class="fa fa-map-marker"></span></div>
-            <div class="add_address" v-if="showAddAddress" @click="goToChildrenRouter('chooseAddress')">请添加一个收获地址</div>
-            <div class="address_detail add_address" v-if="!showAddAddress">
+            <div class="add_address" v-if="negativeCheckedAddress === ''"
+                 @click="goToChildrenRouter('chooseAddress')">请添加一个收获地址</div>
+            <div class="address_detail_wrapper add_address" v-else
+                 @click="goToChildrenRouter('chooseAddress')">
               <header>
-                <span class="family_name">{{addressList.name}}1</span>
-                <span class="sex">{{addressList.sex}}1</span>
-                <span>{{addressList.phone}}1</span>
+                <span class="family_name">{{negativeCheckedAddress.name}}</span>
+                <span class="sex">{{negativeCheckedAddress.sex}}</span>
+                <span>{{negativeCheckedAddress.phone}}</span>
+                <span>{{negativeCheckedAddress.remarkphone}}</span>
               </header>
               <div class="address_detail">
-                <span class="home">{{addressList.tag}}</span>
-                <span>{{addressList.address_detail}}</span>
+                <span class="home">{{negativeCheckedAddress.tab}}</span>
+                <span>{{negativeCheckedAddress.detailaddress}}</span>
               </div>
             </div>
             <span class="fa fa-angle-right"></span>
@@ -118,8 +121,6 @@
     data () {
       return {
         imgBaseUrl: 'https://fuss10.elemecdn.com',
-        addressList: {}, // 地址列表
-        showAddAddress: true, // 显示添加地址
         showAlert: false,  // 显示弹框
         alertText: '' // 弹框内容
       }
@@ -128,42 +129,41 @@
       vhead,
       alertBounced
     },
+    computed: {
+      ...mapGetters(['checkout', 'cnofirmShowChildren', 'remarkObj', 'isShowLogin', 'addressList', 'negativeCheckedAddress'])
+    },
     mounted () {
       // 是否显示子路由
-      if (window.localStorage.getItem('cnofirmShowChildren') === null || window.localStorage.getItem('cnofirmShowChildren') === 'false') {
+      let win = window.localStorage
+      if (win.getItem('cnofirmShowChildren') === null || win.getItem('cnofirmShowChildren') === 'false') {
         this.$store.commit('setCnofirmShowChildren', false)
       } else {
         this.$store.commit('setCnofirmShowChildren', true)
       }
       // 页面刷新从本地获取用户的地址信息
-      if (window.localStorage.getItem('addressList') === null) {
-        this.showAddAddress = true
+      if (win.getItem('addressList') === null) {
+        this.$store.commit('setAddressList', this.addressList)
       } else {
-        this.showAddAddress = false
-        this.addressList = JSON.parse(window.localStorage.getItem('addressList'))
+        this.$store.commit('setAddressList', JSON.parse(win.getItem('addressList')))
       }
       // 页面刷新依然显示用户选择的订单备注
-      if (window.localStorage.getItem('remarkObj') !== null) {
-        this.$store.commit('setRemarkObj', JSON.parse(window.localStorage.getItem('remarkObj')))
+      if (win.getItem('remarkObj') !== null) {
+        this.$store.commit('setRemarkObj', JSON.parse(win.getItem('remarkObj')))
       } else {
         this.$store.commit('setRemarkObj', {})
       }
       // 页面刷新判断是否显示登陆注册
-      if (window.localStorage.getItem('userInfo') === null) {
+      if (win.getItem('userInfo') === null) {
         this.$store.commit('setIsShowLogin', true)
       } else {
         this.$store.commit('setIsShowLogin', false)
       }
-    },
-    computed: {
-      ...mapGetters(['checkout', 'cnofirmShowChildren', 'remarkObj', 'isShowLogin'])
-//      addressList () {
-//        if (window.sessionStorage.getItem('addressList') === null) {
-//          return ''
-//        } else {
-//          return JSON.parse(window.sessionStorage.getItem('addressList'))
-//        }
-//      }
+      // 获取用户当前选择的地址
+      if (win.getItem('negativeCheckedAddress') === null) {
+        this.$store.commit('setNegativeCheckedAddress', '')
+      } else {
+        this.$store.commit('setNegativeCheckedAddress', JSON.parse(win.getItem('negativeCheckedAddress')))
+      }
     },
     methods: {
       goToChildrenRouter (adv) { // 切换到子路由
@@ -186,6 +186,7 @@
             this.alertText = '请添加您的收获地址'
             this.showAlert = true
           } else {
+            this.$router.push({path: '/pay'})
           }
         }
       }

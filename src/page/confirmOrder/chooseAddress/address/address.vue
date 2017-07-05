@@ -33,7 +33,9 @@
           <div class="input_box">
             <label for="address">送餐地址</label>
             <div class="input_wrapper">
-              <p class="change_address" id="change_address" @click="goToAddAddress">小区/写字楼/学校等</p>
+              <p class="change_address" @click="goToAddAddress"
+                 v-if="changeAddress === ''">小区/写字楼/学校等</p>
+              <p class="change_address" @click="goToAddAddress" v-else>{{changeAddress}}</p>
               <input type="text" placeholder="详细地址(如门排号)" id="address" v-model="inputDetailAddress">
             </div>
           </div>
@@ -61,6 +63,7 @@
 <script>
   import vhead from '../../../../components/header/header.vue'
   import alertBounced from '../../../../components/bounced/bounced'
+  import {mapGetters} from 'vuex'
   export default {
     data () {
       return {
@@ -73,13 +76,23 @@
         remarkTelephone: '', // 备选电话
         inputDetailAddress: '', // 详细地址
         inputTab: '', // 标签
-        addressList: {six: '男'}, // 地址信息详情
-        isShowAddAddress: false // 是否显示子路由
+        listObj: {sex: '先生'}  // 用户当前编辑的地址
       }
     },
     components: {
       vhead,
       alertBounced
+    },
+    computed: {
+      ...mapGetters(['isShowAddAddress', 'addressList', 'changeAddress'])
+    },
+    mounted () {
+      let win = window.localStorage
+      if (win.getItem('isShowAddAddress') === null || win.getItem('isShowAddAddress') === 'false') {
+        this.$store.commit('setIsShowAddAddress', false)
+      } else {
+        this.$store.commit('setIsShowAddAddress', true)
+      }
     },
     methods: {
       backToChooseAddress () { // 跳转到父路由
@@ -89,35 +102,46 @@
       },
       changeSixMan () { // 选择男士
         this.changeMan = true
-        this.addressList.six = '男'
+        this.listObj.sex = '先生'
       },
       changeSixWoman () { // 选择女士
         this.changeMan = false
-        this.addressList.six = '女'
+        this.listObj.sex = '女士'
       },
       confirm () { // 确认
         if (this.inputname === '') {
           this.alertText = '请输入您的姓名'
+          this.showAlert = true
         } else if (this.inputTelephone === '') {
           this.alertText = '请输入您的联系电话'
+          this.showAlert = true
         } else if (this.inputDetailAddress === '') {
           this.alertText = '请输入您的详细地址'
+          this.showAlert = true
         } else if (this.inputTab === '') {
           this.alertText = '标签不能为空'
-        } else if (document.getElementById('change_address').innerHTML === '') {
+          this.showAlert = true
+        } else if (this.changeAddress === '') {
           this.alertText = '请选择送餐地址'
+          this.showAlert = true
         } else {
-          this.addressList.name = this.inputname
-          this.addressList.inputTelephone = this.inputTelephone
-          this.addressList.remarkTelephone = this.remarkTelephone
-          this.addressList.inputDetailAddress = this.inputDetailAddress
-          this.addressList.inputTab = this.inputTab
-          this.addressList.changeAddress = document.getElementById('change_address').innerHTML
+          this.listObj.name = this.inputname
+          this.listObj.phone = this.inputTelephone
+          this.listObj.remarkphone = this.remarkTelephone
+          this.listObj.detailaddress = this.inputDetailAddress
+          this.listObj.tab = this.inputTab
+          this.listObj.address = this.changeAddress
+          this.addressList.list.push(this.listObj)
+          this.$store.commit('setAddressList', this.addressList)
+          window.localStorage.setItem('addressList', JSON.stringify(this.addressList))
+          this.$store.commit('setShowChildrenAddress', false)
+          window.localStorage.setItem('showChildrenAddress', false)
+          this.$router.push({path: '/confirmOrder/chooseAddress'})
         }
-        this.showAlert = true
       },
       goToAddAddress () { // 切换到添加地址页
-        this.isShowAddAddress = true
+        this.$store.commit('setIsShowAddAddress', true)
+        window.localStorage.setItem('isShowAddAddress', true)
         this.$router.push({path: '/confirmOrder/chooseAddress/address/addAddress'})
       }
     }
