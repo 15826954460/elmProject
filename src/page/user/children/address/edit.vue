@@ -6,8 +6,11 @@
       <span class="edit" @click="isShowRemove = !isShowRemove" slot="edit">编辑</span>
     </vheader>
 
-    <ul class="address-list">
-      <li v-for="(item, index) in addressList" :class="{active: index === negativeLight}" @click="changeNegative(index)">
+    <ul class="address_list">
+      <li v-if="addressList.length > 0"
+          v-for="(item, index) in addressList"
+          :class="{active: index === negativeLight}"
+          @click="changeNegative(index)">
         <dl>
           <dd>{{item.address}}</dd>
           <dd>{{item.phone}}</dd>
@@ -43,7 +46,7 @@
         this.address.address.splice(index, 1) // 删除当前的地址
         this.UpdatedInRealTime()
       },
-      initAddressList () {  // 页面刷新初始化数据
+      initAddressList () {  // 初始化数据
         if (!window.localStorage.getItem('address')) {
           window.localStorage.setItem('address', JSON.stringify(this.address))
           this.addressList = JSON.parse(window.localStorage.getItem('address'))
@@ -67,7 +70,7 @@
         this.negativeLight = index
       }
     },
-    created () {  // 特面刷新加载本地数据
+    mounted () {  // 特面刷新加载本地数据
       this.initAddressList()
     }
   }
@@ -80,7 +83,7 @@
     width:100%;
     .box;
     .pt(1rem);
-    .address-list{
+    .address_list{
       font-size:.24rem;
       color:@4D;
       background:@default;

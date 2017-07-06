@@ -24,9 +24,8 @@
       <section id="hot_city_container">
         <h4 class="city_title">热门城市</h4>
         <ul class="citylistul clear">
-          <li v-for="(hotCity, hotCityindex) in hotCity" @click="hotToCurrentCity(hotCityindex)">
-            {{hotCity.name}}
-
+          <li v-for="(hot_City, hotCityindex) in hotCity" @click="hotToCurrentCity(hotCityindex)">
+            {{hot_City.name}}
           </li>
         </ul>
       </section>
@@ -53,14 +52,15 @@
   import {mapGetters} from 'vuex'
   import vheader from '../../components/header/header.vue'
   export default {
-    components: {
-      vheader
-    },
     data () {
       return {
         nagetiveCity: '上海',
-        showHome: true
+        showHome: true,
+        hotCity: ''
       }
+    },
+    components: {
+      vheader
     },
     mounted () {
       // 页面刷新判断是否显示登陆注册
@@ -71,7 +71,7 @@
       }
     },
     computed: {
-      ...mapGetters(['hotCity', 'isShowLogin']),
+      ...mapGetters(['isShowLogin']),
       // 获取所有城市
       group_city () {
       // 先用Objectd的内置类的keys方法获取排序对象的属性名，再利用Array原型的sort()方发进行排序

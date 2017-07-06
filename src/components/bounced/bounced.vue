@@ -28,12 +28,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 200;
+    z-index: 100;
     background: transparent;
   }
   .comment_alert {
     width: 80%;
     position: absolute;
+    z-index: 200;
+    background:@default;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -49,6 +51,8 @@
       text-align: center;
       color: @4D;
       font-size:0.28rem;
+      width:90%;
+      margin:0 auto;
     }
     .close_alert {
       width: 100%;

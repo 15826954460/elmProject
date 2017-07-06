@@ -49,7 +49,7 @@ const state = {
   tage: [], // 评价信息分类
   confirmOrderData: [], // 确认订单页面的数据
   cnofirmShowChildren: false, // 是否显示子路由
-  remarkObj: {}, // 备注
+  remarkObj: {}, // 备注show
   showChildrenAddress: false, // 是否显示子路由
   isShowLogin: true, // 显示登陆
   isShowAddAddress: false,

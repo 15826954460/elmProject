@@ -175,20 +175,24 @@
         this.$router.push({path: '/shop'})
         window.localStorage.setItem('cnofirmShowChildren', false)
       },
-      showPayWayFun () {
-      },
-      configPay () { // 确认订单
+      payType () {
         if (window.localStorage.getItem('userInfo') === null) {
           this.alertText = '请登录'
           this.showAlert = true
         } else {
-          if (this.showAddAddress === true) {
+          if (this.negativeCheckedAddress === '') {
             this.alertText = '请添加您的收获地址'
             this.showAlert = true
           } else {
             this.$router.push({path: '/pay'})
           }
         }
+      },
+      showPayWayFun () {
+        this.payType()
+      },
+      configPay () { // 确认订单
+        this.payType()
       }
     }
   }

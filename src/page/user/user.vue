@@ -2,7 +2,7 @@
   <div class="user-box">
 
     <transition name="parent-slide" mode="out-in">
-      <div class="user-wrapper" v-show="$root.isShowUser">
+      <div class="user-wrapper" v-show="$root.showUserChilrenRouter">
 
         <vheader message='个人中心' back='true'>
           <span class="fa fa-angle-left" slot="angle" @click="$router.go(-1)"></span>
@@ -105,11 +105,11 @@
       }
     },
     created () {
-      window.localStorage.getItem('state') === 'false' ? this.$root.isShowUser = false : window.localStorage.getItem('state') === null ? this.$root.isShowUser = true : this.$root.isShowUser = true
+      window.localStorage.getItem('state') === 'false' ? this.$root.showUserChilrenRouter = false : window.localStorage.getItem('state') === null ? this.$root.showUserChilrenRouter = true : this.$root.showUserChilrenRouter = true
     },
     methods: {
       addChildren () {
-        this.$root.isShowUser = false
+        this.$root.showUserChilrenRouter = false
         window.localStorage.setItem('state', false)
         this.$router.push({path: '/user/info'})
       }

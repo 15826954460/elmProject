@@ -37,12 +37,12 @@
           this.$store.commit('setUserInfoName', this.nameText)
           this.nameText = ''
           setTimeout(() => {
-            this.$root.isShowUser = true
+            this.$root.showUserChilrenRouter = true
             window.localStorage.setItem('state', true)  // 保存本地属性
             this.$router.push({path: '/user'})
           }, 100)
           setTimeout(() => {
-            this.$root.isShowUser = false
+            this.$root.showUserChilrenRouter = false
             window.localStorage.setItem('state', false)  // 保存本地属性
             this.$router.push({path: '/user/info'})
           }, 1000)

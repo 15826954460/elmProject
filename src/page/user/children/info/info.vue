@@ -78,7 +78,7 @@
     methods: {
       showUser () {  // 调回到user页面
         window.localStorage.setItem('state', true)
-        this.$root.isShowUser = true
+        this.$root.showUserChilrenRouter = true
         this.$router.push({path: '/user'})
       },
       loadingImg () {  // 加载图片
@@ -87,7 +87,6 @@
 //          let reader = new FileReader()  // new 一个FileReader
 //          reader.onload = function (e) {
 //            let txt = event.target.result
-//            console.log(txt)
 //          }
 //          reader.readAsDataURL(file)
           this.isShowAlert = true
@@ -107,7 +106,7 @@
         this.$store.commit('setOrderList', [])
         this.$store.commit('setUserInfomation', false)
         this.$router.push({path: '/user'})
-        this.$root.isShowUser = true
+        this.$root.showUserChilrenRouter = true
       }
     }
   }

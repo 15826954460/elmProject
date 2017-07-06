@@ -20,13 +20,3 @@ export const getImgPath = {
     }
   }
 }
-export const backToBalance = {
-  methods: {
-    // backToBalance (state, path) {
-    //   let root = 'this.$root.'
-    //   root + '' + state
-    //   window.localStorage.setItem(state, true)  // 为保存刷新的时候用
-    //   this.$router.push({path: '/' + path})  // 回到父级路由页面
-    // }
-  }
-}

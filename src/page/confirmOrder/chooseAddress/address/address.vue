@@ -158,7 +158,6 @@
     font-size:.24rem;
     background:@default;
     .input_box{
-      .br;
       padding:0 .2rem;
       width:100%;
       .flex;
