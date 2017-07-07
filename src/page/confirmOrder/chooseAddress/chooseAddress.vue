@@ -5,6 +5,7 @@
         <vhead message="选择地址">
           <span class="fa fa-angle-left" slot="angle" @click="backToConfirmOrder"></span>
         </vhead>
+
         <ul class="addressList_list_wrapper">
           <li v-if="addressList.list.length !== 0"
               v-for="(item, index) in addressList.list"
@@ -17,6 +18,7 @@
             </div>
           </li>
         </ul>
+
         <p class="add_address" @click="goToChildrenComponent"><i class="fa fa-plus-square"></i>新增收获地址</p>
       </div>
     </transition>

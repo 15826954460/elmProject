@@ -13,7 +13,7 @@
     </section>
 
     <section class="shopDetail"  v-if="orderNegative.orderList && orderNegative.orderDetail">
-      <div @click="goToUser">
+      <div @click="backToOrder">
         <div>
           <img :src="orderNegative.orderList.restaurant_image_url">
         </div>
@@ -62,13 +62,6 @@
     methods: {
       backToOrder () {
         this.$router.push({path: '/order'})
-        this.commentCode()
-      },
-      goToUser () {
-        this.$router.push({path: '/user'})
-        this.commentCode()
-      },
-      commentCode () {
         this.$root.isShowOrderDetail = true
         window.localStorage.setItem('isShowOrderDetail', true) // 保存状态，在父路由中刷新页面时起作用
       }
