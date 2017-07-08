@@ -55,8 +55,7 @@
     data () {
       return {
         nagetiveCity: '上海',
-        showHome: true,
-        hotCity: ''
+        showHome: true
       }
     },
     components: {
@@ -71,7 +70,7 @@
       }
     },
     computed: {
-      ...mapGetters(['isShowLogin']),
+      ...mapGetters(['isShowLogin', 'hotCity']),
       // 获取所有城市
       group_city () {
       // 先用Objectd的内置类的keys方法获取排序对象的属性名，再利用Array原型的sort()方发进行排序

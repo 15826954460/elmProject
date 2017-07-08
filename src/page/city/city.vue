@@ -2,8 +2,8 @@
   <transition name="cityTransition">
     <div class='city_container' v-show="showCity">
       <vheader :message="gressCity">
-        <router-link to='/home' tag='span' class='fa fa-angle-left' slot="angle"></router-link>
-        <router-link to="/home" class='change_city' slot="change_city">切换城市</router-link>
+        <router-link to='/' tag='span' class='fa fa-angle-left' slot="angle"></router-link>
+        <router-link to="/" class='change_city' slot="change_city">切换城市</router-link>
       </vheader>
       <div class='city_form'>
         <div class='input_wrapper'>
