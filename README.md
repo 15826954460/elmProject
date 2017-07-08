@@ -52,7 +52,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 >  开发环境 Chrome 56  nodejs 6.10.0
 
 >  另外一个 vue2.0仿nodejs中文社区的项目，比当前项目简单，适合初学者学习。
-###### 地址在这里 [(https://github.com/15826954460/nodejs)]
+###### 地址在这里 [https://github.com/15826954460/nodejs]
 ###### demo [http://demonodejs.applinzi.com]
 
 ## 目录结构（布局）
