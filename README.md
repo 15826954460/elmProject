@@ -98,6 +98,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 
 # 项目结构
+*
 、、、
 .
 ├── build                                                       // webpack配置文件
