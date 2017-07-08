@@ -53,9 +53,7 @@ const state = {
   showChildrenAddress: false, // 是否显示子路由
   isShowLogin: true, // 显示登陆
   isShowAddAddress: false,
-  addressList: {
-    list: []
-  }, // 地址列表
+  addressList: [], // 地址列表
   changeAddress: '', // 用户选择的地址
   negativeCheckedAddress: '' // 用户当前选则的地址
 }

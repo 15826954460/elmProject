@@ -7,8 +7,8 @@
         </vhead>
 
         <ul class="addressList_list_wrapper">
-          <li v-if="addressList.list.length !== 0"
-              v-for="(item, index) in addressList.list"
+          <li v-if="addressList.length > 0"
+              v-for="(item, index) in addressList"
               class="addressList_list" @click="checkedAddress(index, item)">
             <i class="fa fa-check-circle" :class="{circle_checked: index === isChecked}"></i>
             <div class="choose_address_content">
@@ -52,6 +52,16 @@
       } else {
         this.$store.commit('setShowChildrenAddress', true)
       }
+      if (win.getItem('isChecked') === null) {
+        this.isChecked = 0
+      } else {
+        this.isChecked = parseInt(window.localStorage.getItem('isChecked'))
+      }
+      if (win.getItem('addressList') === null) {
+        this.$store.commit('setAddressList', [])
+      } else {
+        this.$store.commit('setAddressList', JSON.parse(win.getItem('addressList')))
+      }
     },
     methods: {
       backToConfirmOrder () { // 跳回到确认订单页
@@ -66,6 +76,7 @@
       },
       checkedAddress (index, item) {  // 选择地址并切换到确认订单页
         this.isChecked = index
+        window.localStorage.setItem('isChecked', index)
         this.$store.commit('setNegativeCheckedAddress', item)
         window.localStorage.setItem('negativeCheckedAddress', JSON.stringify(item))
         this.$store.commit('setCnofirmShowChildren', false)
@@ -77,6 +88,9 @@
 </script>
 <style lang="less" scoped>
   @import '../../../common/comment.less';
+  .choose_address_box{
+    min-height:100vh;
+  }
   .choose_address_wrapper {
     .pt(.8rem);
     font-size: .24rem;

@@ -78,31 +78,6 @@
       halfNext () {
         this.showNavContent = 1
       },
-      // 所有关于轮播的方法
-      carousel () {
-//        let _this = this
-//        // 改变轮播中的显示和隐藏
-//        function changeNavContent () {
-//          _this.showNavContent === 0 ? _this.showNavContent = 1 : _this.showNavContent = 0
-//        }
-//
-//        // 建立一个通用的轮播函数
-//        function go () {
-//          _this.timer = setInterval(() => {
-//            changeNavContent()
-//          }, 2000)
-//        }
-//
-//        // 鼠标进入停止轮播
-//        function stopAuto () {
-//          clearInterval(_this.timer)
-//        }
-//
-//        return {
-//          go: go,
-//          stopAuto: stopAuto
-//        }
-      },
       // 手指滑动方向的判断
       finger () {
 //        let startx = null

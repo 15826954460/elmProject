@@ -31,9 +31,6 @@ export const setSearchData = (state, searchData) => {
 export const setShopList = (state, shopList) => {
   state.shopList = shopList
 }
-// export const setOrderId = (state, orderId) => {
-//   state.orderId = orderId
-// }
 export const setUserInfoName = (state, uName) => {
   state.userInfo.uName = uName
 }
