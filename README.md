@@ -24,7 +24,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 <img src="./static/gif/search.gif" width="380"/><img src="./static/gif/order.gif" width="380"/>
 
 #### 确认订单和重置密码
-<img src="./static/gif/confirmorder.gif" width="380"/><img src="./static/gif/resetSerct.gif" width="380"/>
+<img src="./static/gif/confirmorder.gif" width="380"/><img src="./static/gif/resetSecrct.gif" width="380"/>
 
 #### 个人中心和添加地址
 <img src="./static/gif/myself.gif" width="380"/><img src="./static/gif/myselfcenter.gif" width="380"/><img src="./static/gif/address.gif" width="380"/>
@@ -52,7 +52,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 >  开发环境 Chrome 56  nodejs 6.10.0
 
 >  另外一个 vue2.0仿nodejs中文社区的项目，比当前项目简单，适合初学者学习。
-###### [地址在这里](https://github.com/15826954460/nodejs)
+###### 地址在这里 [(https://github.com/15826954460/nodejs)]
 ###### demo [http://demonodejs.applinzi.com]
 
 ## 目录结构（布局）
