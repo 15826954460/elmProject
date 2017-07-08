@@ -15,19 +15,19 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 ## 效果显示
 
 #### 城市选择及登陆
-<img src="./static/gif/city.gif" width="380"/><img src="./static/img/login.gif" width="380"/>
+<img src="./static/gif/city.gif" width="380"/><img src="./static/gif/login.gif" width="380"/>
 
 #### 商家菜单及购物车
-<img src="./static/gif/menu.gif" width="380"/><img src="./static/img/shop.gif" width="380"/>
+<img src="./static/gif/menu.gif" width="380"/><img src="./static/gif/shop.gif" width="380"/>
 
 #### 搜索和订单页
-<img src="./static/gif/search.gif" width="380"/><img src="./static/img/order.gif" width="380"/>
+<img src="./static/gif/search.gif" width="380"/><img src="./static/gif/order.gif" width="380"/>
 
 #### 确认订单和重置密码
-<img src="./static/gif/confirmorder.gif" width="380"/><img src="./static/img/resetSerct.gif" width="380"/>
+<img src="./static/gif/confirmorder.gif" width="380"/><img src="./static/gif/resetSerct.gif" width="380"/>
 
 #### 个人中心和添加地址
-<img src="./static/gif/myself.gif" width="380"/><img src="./static/img/myselfcenter.gif" width="380"/><img src="./static/img/address.gif" width="380"/>
+<img src="./static/gif/myself.gif" width="380"/><img src="./static/gif/myselfcenter.gif" width="380"/><img src="./static/gif/address.gif" width="380"/>
 
 ## 项目运行
 
@@ -95,11 +95,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 7、接下来会花更多的时间去学习一些原生的js,以及数据的结构与逻辑，年底将会上线一个非常对联逻辑的demo,使用纯粹的前端去实现trello，刚开始学习的时候，和朋友一起写的，后期会给补上，全部都是数据逻辑操作
 
-
-
-### 商铺列表页
-
-<img src="https://github.com/bailicangdu/vue2-elm/blob/master/screenshots/msite.png" width="365" height="619"/> <img src="https://github.com/bailicangdu/vue2-elm/blob/master/screenshots/msite.gif" width="365" height="619"/>
 
 
 # 项目结构
