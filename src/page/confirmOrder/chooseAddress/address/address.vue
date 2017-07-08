@@ -131,7 +131,7 @@
           this.listObj.detailaddress = this.inputDetailAddress
           this.listObj.tab = this.inputTab
           this.listObj.address = this.changeAddress
-          this.addressList.list.push(this.listObj)
+          this.addressList.push(this.listObj)
           this.$store.commit('setAddressList', this.addressList)
           window.localStorage.setItem('addressList', JSON.stringify(this.addressList))
           this.$store.commit('setShowChildrenAddress', false)

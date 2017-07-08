@@ -58,7 +58,6 @@
       },
       choooedAddress (item) {
         this.$store.commit('setChangeAddress', item.name)
-        console.log(this.$store.getters.changeAddress)
         this.state()
       },
       state () {
