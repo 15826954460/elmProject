@@ -98,129 +98,132 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 
 # 项目结构
+、、、
+.
+├── build                                                       // webpack配置文件
+├── config                                                      // 项目打包路径
+├── data                                                        // 所有的本地json数据
+├── src                                                         // 资源文件
+│    ├── assets
+│    │     ├── swiper.css                                       // 插件样式
+│    ├── common
+│    │     ├── animate.css                                      // 公用动画css
+│    │     ├── comment.css                                      // 所有公用css
+│    │     ├── headerComment.css                                // 公用头部css
+│    │     ├── reset.css                                        // 重置css
+│    ├── components                                             // 组件
+│    │     ├── bounced
+│    │     ├──   └── bounced.vue                                // 弹出框组件
+│    │     ├── footer
+│    │     │     └── footGuide.vue                              // 底部公共组件
+│    │     │── header
+│    │     │     └── head.vue                                   // 头部公共组件
+│    │     │── star
+│    │     │     └── star.vue                                   // 星星组件
+│    │     └── header
+│    │           └── menuDetail.vue                             // 菜品详情组件
+│    ├── mixin                                                  // 混合
+│    │     ├── finger.js                                        // 手指滑动方向js
+│    │     └── getPath.js                                       // 获取路径方法js
+│    ├── page
+│    │     ├── balance
+│    │     │     ├── balance.vue                                // 余额页
+│    │     │     └── children
+│    │     │            └── detail.vue                          // 余额详情
+│    │     ├── city
+│    │     │     └── city.vue                                   // 当前城市
+│    │     ├── confirmOrder
+│    │     │     ├── chooseAddress
+│    │     │     │       ├── address
+│    │     │     │       │     ├── addAddress
+│    │     │     │       │     │      └── addAddress.vue        // 搜索地址
+│    │     │     │       │     └── address.vue                  // 添加地址
+│    │     │     │       └── chooseAddress.vue                  // 选择地址
+│    │     │     ├── invoice
+│    │     │     │       └── invoice.vue                        // 选择发票
+│    │     │     ├── orderNote
+│    │     │     │       └── orderNote.vue                      // 订单备注
+│    │     │     └── confirmOrder.vue                           // 确认订单
+│    │     ├── download
+│    │     │     └── download.vue                               // 下载App
+│    │     ├── favorable
+│    │     │     ├── children
+│    │     │     │       ├── hongbao
+│    │     │     │       │     └── hongbao.vue                  // 我的红包
+│    │     │     │       ├── intro
+│    │     │     │       │     └── intro.vue                    // 积分说明
+│    │     │     │       ├── jinjuan
+│    │     │     │       │     └── jinjuan.vue                  // 商家代金卷
+│    │     │     │       └── prize
+│    │     │     │             └── prize.vue                    // 推荐有奖
+│    │     │     └── favorable.vue                              // 我的优惠
+│    │     ├── index
+│    │     │     └── index.vue                                  // 首页（城市列表页）
+│    │     ├── intergral
+│    │     │     └── intergral.vue                              // 积分商城
+│    │     ├── login
+│    │     │     └── login.vue                                  // 登陆
+│    │     ├── menu
+│    │     │     ├── menu.vue                                   // 菜品详情
+│    │     │     └── shoplist.vue                               // 菜品列表
+│    │     ├── order
+│    │     │     ├── children
+│    │     │     │      └── orderDetail.vue                     // 订单详情
+│    │     │     └── order.vue                                  // 订单列表
+│    │     ├── pay
+│    │     │     └── pay.vue                                    // 付款页
+│    │     ├── points
+│    │     │     ├── children
+│    │     │     │      └── detail.vue                          // 积分说明
+│    │     │     └── points.vue                                 // 积分页
+│    │     ├── resetSecret
+│    │     │     └── resetSecret.vue                            // 重置密码
+│    │     ├── searchBusiness
+│    │     │     └── search.vue                                 // 搜索商家
+│    │     ├── service
+│    │     │     ├── children
+│    │     │     │      └── questiondetail.vue                  // 问题详情
+│    │     │     └── service.vue                                // 服务页面
+│    │     ├── shop
+│    │     │     ├── shopDetail
+│    │     │     │      ├── shopSafe
+│    │     │     │      │      └── shopSafe.vue                // 食品安全
+│    │     │     │      └── shopDetail.vue                     // 商家详情
+│    │     │     └── shop.vue                                  // 商家选择
+│    │     ├── user
+│    │     │     ├── children
+│    │     │     │      ├── address
+│    │     │     │      │     ├── add.vue                      // 添加收获地址
+│    │     │     │      │     ├── edit.vue                     // 编辑地址
+│    │     │     │      │     └── list.vue                     // 地址列表
+│    │     │     │      ├── info
+│    │     │     │      │     └── info                         // 用户信息
+│    │     │     │      ├── reset
+│    │     │     │      │     └── reset.vue                    // 重置用户登陆信息
+│    │     │     │      └── username
+│    │     │     │            └── username.vue                 // 修改用户名
+│    │     │     └── user.vue                                  // 用户中心
+│    │     └── vip
+│    │           ├── children
+│    │           │      ├── description
+│    │           │      │     └── description.vue              // 规则描述
+│    │           │      ├── exchangevip
+│    │           │      │     └── exchangevip.vue              // 兑换vip
+│    │           │      └── shophistory
+│    │           │            └── shophistory.vue              // 购买历史
+│    │           └── vip.vue                                   // vip
+│    ├── router
+│    │    └── index.js                                         // 路由
+│    ├── store                                                 // vuex的状态管理
+│    │    ├── action.js                                        // 配置actions
+│    │    ├── getters.js                                       // 配置getters
+│    │    ├── index.js                                         // 引用vuex，创建store
+│    │    └── mutations.js                                     // 配置mutations
+│    ├── App.vue                                               // 页面入口文件
+│    └── main.js                                               // 程序入口文件，加载各种公共组件
+└── static                                                     // 静态资源文件
+.
+56 directories, 203 files
 
-* ├── build                                                    // webpack配置文件
-* ├── config                                                   // 项目打包路径
-* ├── data                                                     // 所有的本地json数据
-* ├── src                                                      // 资源文件
-* │    ├── assets
-       │     ├── swiper.css                                   // 插件样式
-       ├── common
-       │     ├── animate.css                                  // 公用动画css
-       │     ├── comment.css                                  // 所有公用css
-       │     ├── headerComment.css                            // 公用头部css
-       │     ├── reset.css                                    // 重置css
-       ├── components                                          // 组件
-       │     ├── bounced
-       │     ├──   └── bounced.vue                             // 弹出框组件
-       │     ├── footer
-       │     │     └── footGuide.vue                           // 底部公共组件
-       │     │── header
-       │     │     └── head.vue                                // 头部公共组件
-       │     │── star
-       │     │     └── star.vue                                // 星星组件
-       │     └── header
-       │           └── menuDetail.vue                          // 菜品详情组件
-       ├── mixin                                               // 混合
-       │     ├── finger.js                                     // 手指滑动方向js
-       │     └── getPath.js                                    // 获取路径方法js
-       ├── page
-       │     ├── balance
-       │     │     ├── balance.vue                              // 余额页
-       │     │     └── children
-       │     │            └── detail.vue                        // 余额详情
-       │     ├── city
-       │     │     └── city.vue                                 // 当前城市
-       │     ├── confirmOrder
-       │     │     ├── chooseAddress
-       │     │     │       ├── address
-       │     │     │       │     ├── addAddress
-       │     │     │       │     │      └── addAddress.vue      // 搜索地址
-       │     │     │       │     └── address.vue                // 添加地址
-       │     │     │       └── chooseAddress.vue                // 选择地址
-       │     │     ├── invoice
-       │     │     │       └── invoice.vue                      // 选择发票
-       │     │     ├── orderNote
-       │     │     │       └── orderNote.vue                    // 订单备注
-       │     │     └── confirmOrder.vue                         // 确认订单
-       │     ├── download
-       │     │     └── download.vue                             // 下载App
-       │     ├── favorable
-       │     │     ├── children
-       │     │     │       ├── hongbao
-       │     │     │       │     └── hongbao.vue                // 我的红包
-       │     │     │       ├── intro
-       │     │     │       │     └── intro.vue                  // 积分说明
-       │     │     │       ├── jinjuan
-       │     │     │       │     └── jinjuan.vue                // 商家代金卷
-       │     │     │       └── prize
-       │     │     │             └── prize.vue                  // 推荐有奖
-       │     │     └── favorable.vue                            // 我的优惠
-       │     ├── index
-       │     │     └── index.vue                                // 首页（城市列表页）
-       │     ├── intergral
-       │     │     └── intergral.vue                            // 积分商城
-       │     ├── login
-       │     │     └── login.vue                                // 登陆
-       │     ├── menu
-       │     │     ├── menu.vue                                 // 菜品详情
-       │     │     └── shoplist.vue                             // 菜品列表
-       │     ├── order
-       │     │     ├── children
-       │     │     │      └── orderDetail.vue                   // 订单详情
-       │     │     └── order.vue                                // 订单列表
-       │     ├── pay
-       │     │     └── pay.vue                                  // 付款页
-       │     ├── points
-       │     │     ├── children
-       │     │     │      └── detail.vue                        // 积分说明
-       │     │     └── points.vue                               // 积分页
-       │     ├── resetSecret
-       │     │     └── resetSecret.vue                          // 重置密码
-       │     ├── searchBusiness
-       │     │     └── search.vue                               // 搜索商家
-       │     ├── service
-       │     │     ├── children
-       │     │     │      └── questiondetail.vue                // 问题详情
-       │     │     └── service.vue                              // 服务页面
-       │     ├── shop
-       │     │     ├── shopDetail
-       │     │     │      ├── shopSafe
-       │     │     │      │      └── shopSafe.vue              // 食品安全
-       │     │     │      └── shopDetail.vue                   // 商家详情
-       │     │     └── shop.vue                                // 商家选择
-       │     ├── user
-       │     │     ├── children
-       │     │     │      ├── address
-       │     │     │      │     ├── add.vue                    // 添加收获地址
-       │     │     │      │     ├── edit.vue                   // 编辑地址
-       │     │     │      │     └── list.vue                   // 地址列表
-       │     │     │      ├── info
-       │     │     │      │     └── info                       // 用户信息
-       │     │     │      ├── reset
-       │     │     │      │     └── reset.vue                  // 重置用户登陆信息
-       │     │     │      └── username
-       │     │     │            └── username.vue               // 修改用户名
-       │     │     └── user.vue                                // 用户中心
-       │     └── vip
-       │           ├── children
-       │           │      ├── description
-       │           │      │     └── description.vue            // 规则描述
-       │           │      ├── exchangevip
-       │           │      │     └── exchangevip.vue            // 兑换vip
-       │           │      └── shophistory
-       │           │            └── shophistory.vue            // 购买历史
-       │           └── vip.vue                                 // vip
-       ├── router
-       │    └── index.js                                       // 路由
-       ├── store                                               // vuex的状态管理
-       │    ├── action.js                                      // 配置actions
-       │    ├── getters.js                                     // 配置getters
-       │    ├── index.js                                       // 引用vuex，创建store
-       │    └── mutations.js                                   // 配置mutations
-       ├── App.vue                                             // 页面入口文件
-       └── main.js                                             // 程序入口文件，加载各种公共组件
-* └── static                                                   // 静态资源文件
-
-> A Vue.js project
+```
 
