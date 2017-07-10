@@ -12,6 +12,37 @@
 ## 技术栈
 vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
+## 效果演示
+
+#### 查看demo，你可以狠狠地点击这里 [http://demoelmwebapp.applinzi.com]，建议较新的Chrome,Fix,O....等浏览器进行浏览
+
+#### 移动端扫码：
+<img src="./static/img/erweima.png"/>
+
+## 附言
+
+>  本项目主要用于熟悉如何用 vue2 架构一个大型项目
+
+>  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
+
+>  开发环境 Chrome 56  nodejs 6.10.0
+
+>  另外一个 vue2.0仿nodejs中文社区的项目，比当前项目简单，适合初学者学习。
+
+###### 地址在这里 [https://github.com/15826954460/nodejs]
+
+###### demo [http://demonodejs.applinzi.com]
+
+## 项目运行
+
+##### 温馨提示：由于该项目大量使用的ES6新特性，nodejs必须是较新的版本(6.0以上)，建议使用稳定版本
+
+* git clone https://github.com/15826954460/elmProject
+* cd nodejs
+* npm/cnpm install
+* npm/cnpm run dev
+
+
 ## 效果显示
 
 #### 城市选择及登陆
@@ -28,33 +59,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 #### 个人中心和添加地址
 <img src="./static/gif/myself.gif" width="380"/><img src="./static/gif/myselfcenter.gif" width="380"/><img src="./static/gif/address.gif" width="380"/>
-
-## 项目运行
-
-##### 温馨提示：由于该项目大量使用的ES6新特性，nodejs必须是较新的版本(6.0以上)，建议使用稳定版本
-
-* git clone https://github.com/15826954460/elmProject
-* cd nodejs
-* npm/cnpm install
-* npm/cnpm run dev
-
-## 效果演示
-
-#### 查看demo，你可以狠狠地点击这里 [http://demoelmwebapp.applinzi.com]，建议较新的Chrome,Fix,O....等浏览器进行浏览
-##### 移动端扫码：
-<img src="./static/img/erweima.png"/>
-
-## 附言
-
->  本项目主要用于熟悉如何用 vue2 架构一个大型项目
-
->  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
-
->  开发环境 Chrome 56  nodejs 6.10.0
-
->  另外一个 vue2.0仿nodejs中文社区的项目，比当前项目简单，适合初学者学习。
-###### 地址在这里 [https://github.com/15826954460/nodejs]
-###### demo [http://demonodejs.applinzi.com]
 
 ## 目录结构（布局）
 - [x] 选择城市 -- 完成
@@ -100,7 +104,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 # 项目结构
 
-、、、
+```
 .
 ├── build                                                       // webpack配置文件
 ├── config                                                      // 项目打包路径
@@ -225,7 +229,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 │    └── main.js                                               // 程序入口文件，加载各种公共组件
 └── static                                                     // 静态资源文件
 .
-56 directories, 203 files
 
 ```
 
