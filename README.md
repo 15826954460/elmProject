@@ -40,8 +40,9 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 ## 效果演示
 
-#### (项目部署服务器出了问题，接下来会补上);
-
+#### 查看demo，你可以狠狠地点击这里 [http://demoelmwebapp.applinzi.com]，建议较新的Chrome,Fix,O....等浏览器进行浏览
+##### 移动端扫码：
+<img src="./static/img/erweima.png"/>
 
 ## 附言
 
@@ -98,7 +99,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 
 
 # 项目结构
-*
+
 、、、
 .
 ├── build                                                       // webpack配置文件
