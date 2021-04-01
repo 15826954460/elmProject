@@ -82,7 +82,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + less + flex + svg
 - [x] 服务中心 -- 完成
 - [x] 红包 -- 完成
 - [x] 上传头像 -- 完成
-- [ ] 付款 -- 臣妾做不到啊~~
 
 
 
